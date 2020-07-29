@@ -1,0 +1,304 @@
+//estilos seccion busqueda (ilustracion, buscador y trending topics)
+.main-header {
+    h1 {
+        @include titulos;
+        font-size: 25px;
+        line-height: 33px;
+
+        padding: 7px 54px 31px 54px;
+
+        .gifos {
+            color: $turquesa;
+        }
+    }
+
+    .buscador-contenedor {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            width: 273px;
+        }
+
+        .buscador {
+            border: 1px solid $violeta;
+            border-radius: 27px;
+            width: 334px;
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+
+            .buscador-bloque {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                padding: 0 18px;
+
+                .buscador-y-lupa {
+                    display: flex;
+
+                    .buscador-lupa-gris {
+                        padding-top: 2px;
+                        width: 22px;
+                        opacity: 0;
+                    }
+
+                    .input-buscador {
+                        margin-left: 15px;
+                        border: none;
+                        font-family: $roboto;
+                        color: $gris-medio;
+                        font-size: 16px;
+                        text-align: left;
+                        line-height: 19px;
+                        font-weight: 400;
+                    }
+                }
+
+                #btn-buscador {
+                    background-color: unset;
+                    border: none;
+
+                    .icon-lupa-abierta {
+                        padding-top: 3px;
+                        width: 22px;
+                    }
+
+                    .icon-cerrar-busqueda {
+                        display: none;
+                    }
+                }
+            }
+
+            .buscador-sugerencias {
+                display: none;
+            }
+        }
+    }
+
+    .trending-sugerencias {
+        margin-top: 31px;
+
+        h3 {
+            @include titulos;
+            font-size: 16px;
+            line-height: 25px;
+        }
+
+        #trending-topics {
+            font-family: $montse;
+            color: $violeta;
+            font-size: 14px;
+            text-align: center;
+            line-height: 25px;
+            padding: 3px 85px 0px 85px;
+        }
+    }
+}
+
+//clases definidas para el buscador abierto
+.buscador-abierto {
+    border: 1px solid $violeta;
+    border-radius: 27px;
+    width: 334px;
+    height: 200px;
+    //display: flex;
+    //flex-direction: column;
+
+    .buscador-bloque {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 18px;
+
+        .buscador-y-lupa {
+            display: flex;
+
+            .buscador-lupa-gris {
+                padding-top: 2px;
+                width: 22px;
+                opacity: 1;
+            }
+
+            .input-buscador {
+                margin-left: 15px;
+                border: none;
+                font-family: $roboto;
+                color: $negro;
+                font-size: 16px;
+                text-align: left;
+                line-height: 19px;
+                font-weight: 400;
+            }
+        }
+
+        #btn-buscador {
+            background-color: unset;
+            border: none;
+
+            .icon-lupa-abierta {
+                display: none;
+            }
+
+            .icon-cerrar-busqueda {
+                width: 14px;
+            }
+        }
+    }
+
+    .buscador-sugerencias {
+        display: block;
+        margin: 0 18px;
+        border-top: 1px solid grey;
+
+        .sugerencia {
+            display: flex;
+            padding-top: 14px;
+
+            .sugerencia-lupa-gris {
+                width: 16px;
+            }
+
+            .buscador-sugerencia-texto {
+                margin-left: 20px;
+                border: none;
+                font-family: $roboto;
+                color: $gris-medio;
+                font-size: 16px;
+                text-align: left;
+                line-height: 19px;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+
+//estilos de la seccion RESULTADOS BUSQUEDA agregada con js
+#resultados-busqueda-contenedor {
+    display: block;
+    position: relative;
+    margin-top: 35px;
+    text-align: center;
+}
+
+#resultados-busqueda-contenedor::before {
+    content: "";
+    position: absolute;
+    top: 1;
+    left: calc(50% - 78.5px);
+    width: 157px;
+    border-bottom: 1px solid $gris-medio;
+    opacity: 0.5;
+}
+
+#titulo-busqueda {
+    position: relative;
+    padding-top: 43px;
+    @include titulos;
+    font-size: 25px;
+    line-height: 40px;
+}
+
+#resultados-busqueda {
+    margin: 38px 10px 53px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.resultados-gif-box {
+    width: 44%;
+    height: 120px; //hay que ver tema responsive, como hacer que crezcan bien. los porcentajes funcionan rari
+    overflow: hidden;
+    margin: 0 10px 25px 10px;
+}
+
+.resultados-gif {
+    width: 100%;
+    //height: 100%;
+}
+
+.btn-generico {
+    color: $violeta;
+    background-color: unset;
+    border: 1px solid $violeta;
+    border-radius: 25px;
+    padding: 16px 32px;
+
+    font-family: $montse;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@media screen and (min-width: 1440px) {
+    .main-header {
+        h1 {
+            font-size: 35px;
+            line-height: 50px;
+            padding: 76px 440px 24px 440px;
+        }
+
+        .buscador-contenedor {
+            img {
+                width: 399px;
+            }
+
+            .buscador {
+                width: 551px;
+            }
+        }
+
+        .trending-sugerencias {
+            margin-top: 73px;
+
+            h3 {
+                @include titulos;
+                font-size: 18px;
+            }
+
+            #trending-topics {
+                font-size: 16px;
+                padding-top: 7px;
+            }
+        }
+    }
+
+//clases definidas para el buscador abierto
+.buscador-abierto {
+    width: 551px;
+}
+
+    //estilos de la seccion RESULTADOS BUSQUEDA agregada con js
+    #resultados-busqueda-contenedor {
+        margin-top: 55px;
+    }
+
+    #titulo-busqueda {
+        padding-top: 81px;
+        font-size: 35px;
+        line-height: 30px;
+    }
+
+    #resultados-busqueda {
+        margin: 59px 146px 47px 146px;
+    }
+
+    .resultados-gif-box {
+        width: 22%;
+        height: 200px; //hay que ver tema responsive, como hacer que crezcan bien. los porcentajes funcionan rari
+
+        margin: 0 15px 31px 15px;
+    }
+
+    //boton VER MAS hover
+    .btn-generico:hover {
+        background-color: $violeta;
+        color: $blanco;
+    }
+}
