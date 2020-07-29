@@ -2,12 +2,41 @@
 let apiKey = "QEiNwRIV3GcWQ83yvX6IVcIAST0hxr1n";
 
 // BUSCADOR
-//1. keydown/keyup: se agranda el div y se muestran sugerencias
+//traigo los elementos a usar del html
 let inputBuscador = document.getElementById('input-buscador');
-inputBuscador.addEventListener('keydown', buscadorActivo);
+let bloqueBuscador = document.getElementById('buscador');
+let btnBuscar = document.getElementById('buscador-lupa');
+let btnCerrarBusqueda = document.getElementById('cerrar-busqueda');
+
+// keyup: se agranda el div y se muestran sugerencias
+inputBuscador.addEventListener('keyup', buscadorActivo);
 
 function buscadorActivo() {
-    inputBuscador.style.backgroundColor = "red"; //prueba. funciona
+    let busqueda = inputBuscador.value;
+    if (busqueda.length > 0) {
+        //agrego las clases del buscador activo
+        bloqueBuscador.classList.remove('buscador');
+        bloqueBuscador.classList.add('buscador-activo');
+        btnBuscar.style.display = "none";
+        btnCerrarBusqueda.style.display = "block";
+
+        //agrego la funcion
+    } else {
+
+    }
+}
+
+//agrego funcionalidad para el boton "cerrar busqueda":
+btnCerrarBusqueda.addEventListener('click', cerrarBusqueda);
+
+function cerrarBusqueda() {
+    //vacío el input y devuelvo las clases del contenedor a como estaban
+    inputBuscador.value = "";
+    inputBuscador.placeholder = "Busca GIFOS y más";
+    bloqueBuscador.classList.add('buscador');
+    bloqueBuscador.classList.remove('buscador-activo');
+    btnBuscar.style.display = "block";
+    btnCerrarBusqueda.style.display = "none";
 }
 
 //2. Sugerencias de la busqueda: reemplazo las 4 sugerencias con las primeras 4 de la API
@@ -28,20 +57,20 @@ window.onload = trendingTopics();
 
 function trendingTopics() {
     let url = `https://api.giphy.com/v1/trending/searches?api_key=${apiKey}`;
-    
-    fetch(url)
-    .then(resp => resp.json() ) //me trae el json con los trending topics
-    .then(content => {
-        //object with data & meta
-        let topics = content.data;
-        //console.log("Trending Topics", topics);
-        //console.log("META Trending Topics", content.meta);
 
-        trendingTopicsTexto.innerText = topics[0] + ", " + topics[1] + ", " + topics[2] + ", " + topics[3] + ", " + topics[4];
-    })
-    .catch(err => {
-        console.log(err);
-    })
+    fetch(url)
+        .then(resp => resp.json()) //me trae el json con los trending topics
+        .then(content => {
+            //object with data & meta
+            let topics = content.data;
+            //console.log("Trending Topics", topics);
+            //console.log("META Trending Topics", content.meta);
+
+            trendingTopicsTexto.innerText = topics[0] + ", " + topics[1] + ", " + topics[2] + ", " + topics[3] + ", " + topics[4];
+        })
+        .catch(err => {
+            console.log(err);
+        })
 }
 
 
@@ -54,7 +83,7 @@ trendingGifos();
 
 function trendingGifos() {
     let url = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=4`;
-    
+
     fetch(url)
     .then(resp => resp.json() ) //me trae el json con los 4 trending gifos
     .then(content => {

@@ -1,15 +1,10 @@
 //menu mobile
-.linea-violeta {
-    height: 5px;
-    background-color: $violeta;
-    width: 100%;
-}
-
 .linea-dark {
     background-color: $negro;
 }
 
 header {
+    
     .navbar {
         display: flex;
         justify-content: space-between;
@@ -55,6 +50,10 @@ header {
                             color: $blanco;
                         }
 
+                        .menu-items-dark {
+                            color: $blanco;
+                        }
+
                         &::after {
                             content: "";
                             position: absolute;
@@ -75,6 +74,10 @@ header {
                     }
                 }
 
+                .ul-dark {
+                    background-color: $negro;
+                }
+
                 #checkbox {
                     display: none;
                     z-index: 2;
@@ -91,7 +94,7 @@ header {
                         height: 2px;
 
                         position: relative;
-                        background-color: $violeta;
+                        background-color: $negro;
                         z-index: 1;
 
                         transition: transform 0.3s ease, opacity 0.3s ease;
@@ -100,15 +103,16 @@ header {
                     .span1 {
                         transform-origin: 10% 0%;
                         margin-bottom: 3px;
-                        background-color: $violeta;
                     }
                     .span2 {
                         margin-bottom: 3px;
-                        background-color: $violeta;
                     }
                     .span3 {
                         transform-origin: 10% 100%;
-                        background-color: $violeta;
+                    }
+
+                    .span-dark {
+                        background-color: $blanco;
                     }
                 }
 
@@ -122,20 +126,26 @@ header {
                 input:checked ~ label .span1 {
                     opacity: 1;
                     transform: rotate(45deg);
-                    background-color: $violeta;
+                    background-color: $negro;
+                }
+
+                input:checked ~ label .span-dark {
+                    background-color: $blanco;
                 }
 
                 input:checked ~ label .span2 {
                     opacity: 0;
                 }
 
-                input:checked ~ label .span3 {
-                    opacity: 1;
-                    transform: rotate(-45deg);
-                    background-color: $violeta;
+                input:checked ~ label .span-dark {
+                    background-color: $blanco;
                 }
             }
         }
+    }
+
+    .navbar-dark {
+        background-color: $gris-oscuro;
     }
 }
 
@@ -184,6 +194,11 @@ header {
                                 color: $violeta;
                             }
 
+                            .menu-items-dark {
+                                color: $blanco;
+                                border-bottom: 2px solid $gris-oscuro;
+                            }
+
                             &::after {
                                 display: none;
                             }
@@ -217,6 +232,10 @@ header {
                                 }
                             }
 
+                            .menu-creargifo-dark {
+                                border: 1px solid $blanco;
+                            }
+
                             .menu-creargifo:hover {
                                 background-color: $violeta;
                                 border-bottom: none;
@@ -228,6 +247,10 @@ header {
                                 .mas-blanco {
                                     display: block;
                                 }
+                            }
+
+                            .menu-creargifo-dark:hover{
+                                background-color: $blanco;
                             }
 
                             .menu-creargifo:active {
@@ -242,6 +265,10 @@ header {
                         li:first-child .menu-items {
                             padding-top: 3px;
                         }
+                    }
+
+                    .ul-dark {
+                        background-color: unset;
                     }
 
                     #checkbox {

@@ -59,6 +59,7 @@
                 #btn-buscador {
                     background-color: unset;
                     border: none;
+                    cursor: pointer;
 
                     .icon-lupa-abierta {
                         padding-top: 3px;
@@ -98,13 +99,11 @@
 }
 
 //clases definidas para el buscador abierto
-.buscador-abierto {
+.buscador-activo {
     border: 1px solid $violeta;
     border-radius: 27px;
     width: 334px;
     height: 200px;
-    //display: flex;
-    //flex-direction: column;
 
     .buscador-bloque {
         width: 100%;
@@ -169,7 +168,7 @@
                 font-size: 16px;
                 text-align: left;
                 line-height: 19px;
-                font-weight: 400;
+                font-weight: 300;
             }
         }
     }
@@ -228,7 +227,7 @@
     border: 1px solid $violeta;
     border-radius: 25px;
     padding: 16px 32px;
-
+    cursor: pointer;
     font-family: $montse;
     font-size: 13px;
     line-height: 16px;
@@ -270,7 +269,7 @@
     }
 
 //clases definidas para el buscador abierto
-.buscador-abierto {
+.buscador-activo {
     width: 551px;
 }
 

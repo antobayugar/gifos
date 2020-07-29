@@ -117,12 +117,18 @@
                 border: none;
             }
 
+            .favorito {
+                cursor: pointer;
+            }
+            
             .download {
                 margin-left: 10px;
+                cursor: pointer;
             }
 
             .max {
                 margin-left: 10px;
+                cursor: pointer;
             }
 
             .iconos-acciones-box:hover {

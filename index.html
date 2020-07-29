@@ -20,26 +20,26 @@
         <div class="navbar">
 
             <img src="/assets/logo-mobile.svg" alt="Logo" id="logo">
-            <img src="/assets/logo-desktop.svg" alt="" id="logo-desktop">
+            <img src="/assets/logo-desktop.svg" alt="Logo" id="logo-desktop">
 
             <nav>
                 <div class="menu">
                     <input type="checkbox" id="checkbox" />
 
-                    <label for="checkbox">
+                    <label for="checkbox" id="icon-hamburguesa">
                         <span class="span1"></span>
                         <span class="span2"></span>
                         <span class="span3"></span>
                     </label>
 
-                    <ul>
-                        <li><a href="#" id="menu-modo">Modo nocturno</a></li>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="favoritos.html">Favoritos</a></li>
-                        <li><a href="misgifos.html">Mis GIFOS</a></li>
+                    <ul id="ul-menu">
+                        <li><a href="#" id="menu-modo" class="menu-items">Modo nocturno</a></li>
+                        <li><a href="index.html" class="menu-items">Inicio</a></li>
+                        <li><a href="favoritos.html" class="menu-items">Favoritos</a></li>
+                        <li><a href="misgifos.html" class="menu-items">Mis GIFOS</a></li>
                         <li><a href="creargifo.html" class="menu-creargifo">
-                                <img src="/assets/button-crear-gifo.svg" alt="" class="mas-violeta">
-                                <img src="/assets/button-crear-gifo-hover.svg" alt="" class="mas-blanco">
+                                <img src="/assets/button-crear-gifo.svg" alt="Crear Gifo" class="mas-violeta">
+                                <img src="/assets/button-crear-gifo-hover.svg" alt="Crear Gifo" class="mas-blanco">
                             </a></li>
                     </ul>
                 </div>
@@ -58,11 +58,11 @@
             <div class="buscador-contenedor">
                 <img src="/assets/ilustra_header.svg" alt="Ilustración Header">
 
-                <div class="buscador">
+                <div id="buscador" class="buscador">
 
                     <div class="buscador-bloque">
                         <div class="buscador-y-lupa">
-                            <img src="/assets/icon-search-gris.svg" alt="" class="buscador-lupa-gris">
+                            <img src="/assets/icon-search-gris.svg" alt="buscador" class="buscador-lupa-gris">
                             <input type="text" placeholder="Busca GIFOS y más" id="input-buscador" class="input-buscador">
                         </div>
                         <button id="btn-buscador">
@@ -71,43 +71,61 @@
                         </button>
                     </div>
 
-                    
-
-                </div>
-
-                <div class="buscador-abierto">
-
-                    <div class="buscador-bloque">
-                        <div class="buscador-y-lupa">
-                            <img src="/assets/icon-search-gris.svg" alt="" class="buscador-lupa-gris">
-                            <input type="text" placeholder="Busca GIFOS y más" id="input-buscador" class="input-buscador">
-                        </div>
-                        <button id="btn-buscador">
-                            <img src="/assets/icon-search.svg" alt="Buscar" id="buscador-lupa" class="icon-lupa-abierta">
-                            <img src="/assets/button-close.svg" alt="Cerrar búsqueda" id="cerrar-busqueda" class="icon-cerrar-busqueda">
-                        </button>
-                    </div>
-
-                    <div class="buscador-sugerencias">
-                        <div class="sugerencia">
+                    <ul class="buscador-sugerencias">
+                        <li class="sugerencia">
                             <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris" class="sugerencia-lupa-gris">
                             <p class="buscador-sugerencia-texto" id="sugerencia1">Sugerencia 1</p>
-                        </div>
-                        <div class="sugerencia">
+                        </li>
+                        <li class="sugerencia">
                             <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris" class="sugerencia-lupa-gris">
                             <p class="buscador-sugerencia-texto" id="sugerencia2">Sugerencia 2</p>
-                        </div>
-                        <div class="sugerencia">
+                        </li>
+                        <li class="sugerencia">
                             <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris" class="sugerencia-lupa-gris">
                             <p class="buscador-sugerencia-texto" id="sugerencia3" >Sugerencia 3</p>
-                        </div>
-                        <div class="sugerencia">
+                        </li>
+                        <li class="sugerencia">
                             <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris" class="sugerencia-lupa-gris">
                             <p class="buscador-sugerencia-texto" id="sugerencia4">Sugerencia 4</p>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
+
 
                 </div>
+
+                <!-- <div class="buscador-activo">
+
+                    <div class="buscador-bloque">
+                        <div class="buscador-y-lupa">
+                            <img src="/assets/icon-search-gris.svg" alt="" class="buscador-lupa-gris">
+                            <input type="text" placeholder="Busca GIFOS y más" id="input-buscador" class="input-buscador">
+                        </div>
+                        <button id="btn-buscador">
+                            <img src="/assets/icon-search.svg" alt="Buscar" id="buscador-lupa" class="icon-lupa-abierta">
+                            <img src="/assets/button-close.svg" alt="Cerrar búsqueda" id="cerrar-busqueda" class="icon-cerrar-busqueda">
+                        </button>
+                    </div>
+
+                    <ul class="buscador-sugerencias">
+                        <li class="sugerencia">
+                            <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris" class="sugerencia-lupa-gris">
+                            <p class="buscador-sugerencia-texto" id="sugerencia1">Sugerencia 1</p>
+                        </li>
+                        <li class="sugerencia">
+                            <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris" class="sugerencia-lupa-gris">
+                            <p class="buscador-sugerencia-texto" id="sugerencia2">Sugerencia 2</p>
+                        </li>
+                        <li class="sugerencia">
+                            <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris" class="sugerencia-lupa-gris">
+                            <p class="buscador-sugerencia-texto" id="sugerencia3" >Sugerencia 3</p>
+                        </li>
+                        <li class="sugerencia">
+                            <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris" class="sugerencia-lupa-gris">
+                            <p class="buscador-sugerencia-texto" id="sugerencia4">Sugerencia 4</p>
+                        </li>
+                    </ul>
+
+                </div>  -->
             </div>
 
             <div class="trending-sugerencias">
@@ -221,7 +239,8 @@
     </footer>
 
 
-    <script src="/scripts/miapp.js"></script>
+    <script src="/scripts/home.js"></script>
+    <script src="/scripts/modo-nocturno.js"></script>
     <script src="/scripts/trending-slide.js"></script>
 </body>
 
