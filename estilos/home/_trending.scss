@@ -7,7 +7,7 @@
     h2 {
         padding-top: 44px;
         @include titulos;
-        font-size: 25px;
+        font-size: 20px;
         line-height: 30px;
     }
 
@@ -17,7 +17,8 @@
     }
 }
 
-.trending-slider { //contenedor slider
+.trending-slider {
+    //contenedor slider
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -27,7 +28,8 @@
     animation: cambio 20s infinite alternate;
 }
 
-.gif-contenedor { //cajita del gif
+.gif-contenedor {
+    //cajita del gif
     width: 243px;
     height: 187px;
     margin-left: 22px;
@@ -45,18 +47,33 @@
 }
 
 @keyframes cambio {
-    0% {margin-left: 0;}
-    20% {margin-left: 0;}
+    0% {
+        margin-left: 0;
+    }
+    20% {
+        margin-left: 0;
+    }
 
-    25% {margin-left: -265px;}
-    45% {margin-left: -265px;}
+    25% {
+        margin-left: -265px;
+    }
+    45% {
+        margin-left: -265px;
+    }
 
-    50% {margin-left: -530px;}
-    70% {margin-left: -530px;}
+    50% {
+        margin-left: -530px;
+    }
+    70% {
+        margin-left: -530px;
+    }
 
-    75% {margin-left: -773px;}
-    100% {margin-left: -773px;}
-
+    75% {
+        margin-left: -773px;
+    }
+    100% {
+        margin-left: -773px;
+    }
 }
 
 @media screen and (min-width: 1440px) {
@@ -64,7 +81,6 @@
     .trending {
         h2 {
             padding-top: 78px;
-
             font-size: 30px;
         }
 
@@ -96,69 +112,72 @@
         position: absolute;
         z-index: 0;
         background-color: $violeta-op2;
-
         width: 357px;
         height: 275px;
+    }
 
-        .iconos-acciones-gif {
-            display: flex;
-            position: absolute;
-            right: 10px;
-            top: 10px;
+    .iconos-acciones-gif {
+        display: flex;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    
+    .iconos-acciones-box {
+        width: 32px;
+        height: 32px;
+        background-color: $blanco-op;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        border-radius: 6px;
+        border: none;
+    }
 
-            .iconos-acciones-box {
-                width: 32px;
-                height: 32px;
-                background-color: $blanco-op;
-                display: flex;
-                justify-content: center;
-                align-content: center;
-                border-radius: 6px;
-                border: none;
-            }
+    .favorito {
+        cursor: pointer;
+    }
 
-            .favorito {
-                cursor: pointer;
-            }
-            
-            .download {
-                margin-left: 10px;
-                cursor: pointer;
-            }
+    .download {
+        margin-left: 10px;
+        cursor: pointer;
+    }
 
-            .max {
-                margin-left: 10px;
-                cursor: pointer;
-            }
+    .max {
+        margin-left: 10px;
+        cursor: pointer;
+    }
 
-            .iconos-acciones-box:hover {
-                background-color: $blanco;
-            }
-        }
-        .textos-descripcion-gif {
-            position: absolute;
-            bottom: 51px;
-            left: 18.5px;
+    .iconos-acciones-box:hover {
+        background-color: $blanco;
+    }
 
-            .user-gif {
-                text-align: left;
-                color: $blanco;
-                font-size: 15px;
-                line-height: 18px;
-                padding: 0;
-                margin-bottom: 6px;
-            }
+    .textos-descripcion-gif {
+        position: absolute;
+        bottom: 51px;
+        left: 18.5px;
+    }
 
-            .titulo-gif {
-                text-align: left;
-                color: $blanco;
-                font-size: 16px;
-                line-height: 19px;
-                font-weight: 500;
-                padding: 0;
-                margin: 0;
-            }
-        }
+    .user-gif {
+        @include textos-mobile;
+        text-align: left;
+        color: $blanco;
+        font-size: 15px;
+        line-height: 18px;
+        font-weight: 300;
+        padding: 0;
+        margin-bottom: 6px;
+    }
+
+    .titulo-gif {
+        @include textos-mobile;
+        text-align: left;
+        color: $blanco;
+        font-size: 16px;
+        line-height: 19px;
+        font-weight: 500;
+        padding: 0;
+        margin: 0;
     }
 
     .gif-contenedor:hover .gif-acciones {
@@ -170,7 +189,4 @@
         padding: 0;
         height: 100%;
     }
-
-   
 }
-

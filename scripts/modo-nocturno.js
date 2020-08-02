@@ -1,4 +1,8 @@
 //MODO OSCURO
+
+//como hago para que se mantenga clickeado cuando navego en el sitio??
+
+
 let modoColor = document.getElementById('menu-modo');
 modoColor.addEventListener('click', cambioEstilos);
 

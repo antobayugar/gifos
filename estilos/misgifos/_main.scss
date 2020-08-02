@@ -1,4 +1,4 @@
-.header-favoritos {
+.header-misgifos {
     margin-top: 5px;
     text-align: center;
 
@@ -14,7 +14,7 @@
     }
 }
 
-#favoritos-vacio {
+#misgifos-vacio {
     text-align: center;
     margin-top: 40px;
 
@@ -32,12 +32,12 @@
     }
 }
 
-#gifos-favoritos {
+#misgifos-creados {
     margin-top: 20px;
     text-align: center;
 }
 
-.resultados-favoritos { //el contenedor con las 4 columnas
+.resultados-misgifos { //el contenedor con las 4 columnas
     margin: 38px 10px 53px 10px;
     display: flex;
     flex-wrap: wrap;
@@ -45,14 +45,14 @@
     justify-content: center;
 }
 
-.resultados-gif-box-fav { //la caja con cada gif
+.resultados-gif-box-misgifos { //la caja con cada gif
     width: 156px;
     height: 120px; 
     overflow: hidden;
     margin: 0 10px 25px 10px;
 }
 
-.gif-acciones-resultados-fav {
+.gif-acciones-resultados-misgifos {
     display: none;
 }
 
@@ -60,7 +60,7 @@
 
 @media screen and (min-width: 1440px) {
 
-    .header-favoritos {
+    .header-misgifos {
      margin-top: 11px;
         h1 {
             font-size: 25px;
@@ -68,7 +68,7 @@
         }
     }
     
-    #favoritos-vacio {
+    #misgifos-vacio {
         margin-top: 110px;
         margin-bottom: 136px;
     
@@ -84,17 +84,17 @@
         }
     }
 
-    .resultados-busqueda {
+    .resultados-misgifos {
         margin: 59px 146px 47px 146px;
     }
 
-    .resultados-gif-box-fav {
+    .resultados-gif-box-misgifos {
         width: 260px;
         height: 200px;
         margin: 0 15px 31px 15px;
     }
 
-    .gif-acciones-resultados-fav {
+    .gif-acciones-resultados-misgifos {
         position: absolute;
         z-index: 0;
         background-color: $violeta-op2;
@@ -120,22 +120,8 @@
         border: none;
     }
 
-    .favorito {
+    .borrar {
         cursor: pointer;
-        width: 18px;
-
-        .favorito-borrar{
-            display: none;
-        }
-    }
-
-    .favorito:hover {
-        .favorito-activo {
-            display: none;
-        }
-        .favorito-borrar{
-            display: block;
-        }
     }
 
     .download {
@@ -152,13 +138,14 @@
         background-color: $blanco;
     }
 
-    .textos-descripcion-gif-favoritos {
+
+    .textos-descripcion-gif-misgifos {
         position: absolute;
         bottom: 30px;
         left: 18px;
     }
 
-    .user-gif-favoritos {
+    .user-gif-misgifos {
         @include textos-mobile;
         text-align: left;
         color: $blanco;
@@ -169,7 +156,7 @@
         margin-bottom: 6px;
     }
     
-    .titulo-gif-favoritos {
+    .titulo-gif-misgifos {
         @include textos-mobile;
         text-align: left;
         color: $blanco;
@@ -180,7 +167,7 @@
         margin: 0;
     }
 
-    .resultados-gif-box-fav:hover .gif-acciones-resultados-fav {
+    .resultados-gif-box-misgifos:hover .gif-acciones-resultados-misgifos {
         display: block;
     }
 

@@ -1,7 +1,6 @@
 ////// API KEY: 
 apiKey = "QEiNwRIV3GcWQ83yvX6IVcIAST0hxr1n";
 
-
 // TRENDING GIFOS
 //1. Traigo el array con trending gifos
 //2. reemplazo los gifos mostrados con el contenido del array

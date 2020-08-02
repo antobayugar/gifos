@@ -20,7 +20,7 @@ function buscadorActivo() {
         btnBuscar.style.display = "none";
         btnCerrarBusqueda.style.display = "block";
 
-        //agrego la funcion
+        //agrego la funcion de traer sugerencias y reemplazarlas en los elementos
     } else {
 
     }
@@ -37,13 +37,15 @@ function cerrarBusqueda() {
     bloqueBuscador.classList.remove('buscador-activo');
     btnBuscar.style.display = "block";
     btnCerrarBusqueda.style.display = "none";
+
+    //faltaria agregar que se cierre cuando se borra todo
 }
 
-//2. Sugerencias de la busqueda: reemplazo las 4 sugerencias con las primeras 4 de la API
 
-//3. Resultados de la busqueda: cuando se clickea el boton LUPA aparecen los primeros resultados traidos de la API
 
-//4. Boton Ver mas: cuando se apreta, se cargan mas resultados
+//2. Resultados de la busqueda: cuando se clickea el boton LUPA aparecen los primeros resultados traidos de la API
+
+//3. Boton Ver mas: cuando se apreta, se cargan mas resultados
 
 
 
@@ -72,65 +74,3 @@ function trendingTopics() {
             console.log(err);
         })
 }
-
-
-// TRENDING GIFOS
-//1. Traigo el array con trending gifos
-//2. reemplazo los gifos mostrados con el contenido del array
-
-/* let sliderTrendingGifos = document.getElementById('trending-slider');
-trendingGifos();
-
-function trendingGifos() {
-    let url = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=4`;
-
-    fetch(url)
-    .then(resp => resp.json() ) //me trae el json con los 4 trending gifos
-    .then(content => {
-        //object with data, pagination, meta
-        let trendingGifArray = content.data;
-        console.log("Trending GIFOS", trendingGifArray);
-        //console.log("META Trending GIFOS", content.meta);
-
-        let trendingGIFOhtml = "";
-
-        for (let i = 0; i < trendingGifArray.length; i++ ) {
-            let trendingGif = trendingGifArray[i];
-            trendingGIFOhtml += `
-            <div class="gif-contenedor">
-                    <div class="gif-acciones">
-                        <div class="iconos-acciones-gif">
-                            <button class="iconos-acciones-box favorito">
-                                <img src="/assets/icon-fav-hover.svg" alt="icon-favorito">
-                            </button>
-                            <button class="iconos-acciones-box download">
-                                <img src="/assets/icon-download.svg" alt="icon-download">
-                            </button>
-                            <button class="iconos-acciones-box max">
-                                <img src="/assets/icon-max.svg" alt="icon-max">
-                            </button>
-                        </div>
-                        <div class="textos-descripcion-gif">
-                            <p class="user-gif">${trendingGif.username}</p>
-                            <p class="titulo-gif">${trendingGif.title}</p>
-                        </div>
-                    </div>
-                    <img src="${trendingGif.images.downsized.url}" alt="${trendingGif.title}" class="trending-gif">
-                </div>
-            `
-        }
-
-        sliderTrendingGifos.innerHTML = trendingGIFOhtml;
-
-    })
-    .catch(err => {
-        console.log(err);
-    })
-}   */
-
-
-
-// MODO NOCTURNO
-//1. guardo el boton de "modo nocturno"
-//2. cambio clases al click de modo nocturno
-//3. cambio el texto del boton a "modo dia"

@@ -174,18 +174,18 @@
     }
 }
 
-
 //estilos de la seccion RESULTADOS BUSQUEDA agregada con js
-#resultados-busqueda-contenedor {
+.resultados-busqueda-contenedor { //la seccion entera con titulo
     display: block;
     position: relative;
     margin-top: 35px;
     text-align: center;
 }
 
-#resultados-busqueda-contenedor::before {
+.resultados-busqueda-contenedor::before {
     content: "";
     position: absolute;
+    z-index: 0;
     top: 1;
     left: calc(50% - 78.5px);
     width: 157px;
@@ -193,7 +193,7 @@
     opacity: 0.5;
 }
 
-#titulo-busqueda {
+.titulo-busqueda {
     position: relative;
     padding-top: 43px;
     @include titulos;
@@ -201,7 +201,7 @@
     line-height: 40px;
 }
 
-#resultados-busqueda {
+.resultados-busqueda { //el contenedor con las 4 columnas
     margin: 38px 10px 53px 10px;
     display: flex;
     flex-wrap: wrap;
@@ -209,16 +209,21 @@
     justify-content: center;
 }
 
-.resultados-gif-box {
-    width: 44%;
-    height: 120px; //hay que ver tema responsive, como hacer que crezcan bien. los porcentajes funcionan rari
+.resultados-gif-box { //la caja con cada gif
+    width: 156px;
+    height: 120px; 
     overflow: hidden;
     margin: 0 10px 25px 10px;
 }
 
+.gif-acciones-resultados {
+    display: none;
+}
+
 .resultados-gif {
+    object-fit: cover;
     width: 100%;
-    //height: 100%;
+    height: 100%;
 }
 
 .btn-generico {
@@ -268,13 +273,13 @@
         }
     }
 
-//clases definidas para el buscador abierto
-.buscador-activo {
-    width: 551px;
-}
+    //clases definidas para el buscador abierto
+    .buscador-activo {
+        width: 551px;
+    }
 
     //estilos de la seccion RESULTADOS BUSQUEDA agregada con js
-    #resultados-busqueda-contenedor {
+    .resultados-busqueda-contenedor {
         margin-top: 55px;
     }
 
@@ -284,15 +289,53 @@
         line-height: 30px;
     }
 
-    #resultados-busqueda {
+    .resultados-busqueda {
         margin: 59px 146px 47px 146px;
     }
 
     .resultados-gif-box {
-        width: 22%;
-        height: 200px; //hay que ver tema responsive, como hacer que crezcan bien. los porcentajes funcionan rari
-
+        width: 260px;
+        height: 200px;
         margin: 0 15px 31px 15px;
+    }
+
+    .gif-acciones-resultados {
+        position: absolute;
+        z-index: 0;
+        background-color: $violeta-op2;
+        width: 260px;
+        height: 200px;
+    }
+
+    .textos-descripcion-gif-resultados {
+        position: absolute;
+        bottom: 30px;
+        left: 18px;
+    }
+
+    .user-gif-resultados {
+        @include textos-mobile;
+        text-align: left;
+        color: $blanco;
+        font-size: 15px;
+        line-height: 18px;
+        padding: 0;
+        margin-bottom: 6px;
+    }
+
+    .titulo-gif-resultados {
+        @include textos-mobile;
+        text-align: left;
+        color: $blanco;
+        font-size: 16px;
+        line-height: 19px;
+        font-weight: 500;
+        padding: 0;
+        margin: 0;
+    }
+
+    .resultados-gif-box:hover .gif-acciones-resultados {
+        display: block;
     }
 
     //boton VER MAS hover

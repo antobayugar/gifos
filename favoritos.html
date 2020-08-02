@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="estilos/estilos.css">
     <title>GIFOS</title>
 </head>
+
 <body>
 
     <header>
@@ -18,26 +20,26 @@
         <div class="navbar">
 
             <img src="/assets/logo-mobile.svg" alt="Logo" id="logo">
-            <img src="/assets/logo-desktop.svg" alt="" id="logo-desktop">
+            <img src="/assets/logo-desktop.svg" alt="Logo" id="logo-desktop">
 
             <nav>
                 <div class="menu">
                     <input type="checkbox" id="checkbox" />
 
-                    <label for="checkbox">
+                    <label for="checkbox" id="icon-hamburguesa">
                         <span class="span1"></span>
                         <span class="span2"></span>
                         <span class="span3"></span>
                     </label>
 
-                    <ul>
-                        <li><a href="#" id="menu-modo">Modo nocturno</a></li>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="favoritos.html">Favoritos</a></li>
-                        <li><a href="misgifos.html">Mis GIFOS</a></li>
+                    <ul id="ul-menu">
+                        <li><a href="#" id="menu-modo" class="menu-items">Modo nocturno</a></li>
+                        <li><a href="index.html" class="menu-items">Inicio</a></li>
+                        <li><a href="favoritos.html" class="menu-items">Favoritos</a></li>
+                        <li><a href="misgifos.html" class="menu-items">Mis GIFOS</a></li>
                         <li><a href="creargifo.html" class="menu-creargifo">
-                                <img src="/assets/button-crear-gifo.svg" alt="" class="mas-violeta">
-                                <img src="/assets/button-crear-gifo-hover.svg" alt="" class="mas-blanco">
+                                <img src="/assets/button-crear-gifo.svg" alt="Crear Gifo" class="mas-violeta">
+                                <img src="/assets/button-crear-gifo-hover.svg" alt="Crear Gifo" class="mas-blanco">
                             </a></li>
                     </ul>
                 </div>
@@ -51,28 +53,48 @@
 
         <section class="header-favoritos">
 
-            <img src="/assets/icon-favoritos.svg" alt="">
+            <img src="/assets/icon-favoritos.svg" alt="favoritos">
 
             <h1>Favoritos</h1>
 
         </section>
 
-        <section class="gifos-favoritos">
-            
-            <div id="resultados-busqueda">
-                <div class="resultados-gif-box">
+        <section id="favoritos-vacio">
+
+            <img src="/assets/icon-mis-gifos-sin-contenido.svg" alt="favoritos sin contenido">
+            <h3>¡Guardá tu primer GIFO en favoritos para que se muestre aquí!</h3>
+
+        </section>
+
+        <section id="gifos-favoritos">
+
+            <div class="resultados-favoritos">
+
+                <div class="resultados-gif-box-fav">
+                    <div class="gif-acciones-resultados-fav">
+                        <div class="iconos-acciones-gif">
+                            <button class="iconos-acciones-box favorito">
+                                <img src="/assets/icon-fav-active.svg" alt="icon-favorito" class="favorito-activo">
+                                <img src="/assets/icon-fav-hover.svg" alt="icon-nofavorito" class="favorito-borrar">
+                            </button>
+                            <button class="iconos-acciones-box download">
+                                <img src="/assets/icon-download.svg" alt="icon-dowlnoad">
+                            </button>
+                            <button class="iconos-acciones-box max">
+                                <img src="/assets/icon-max.svg" alt="icon-max">
+                            </button>
+                        </div>
+                        <div class="textos-descripcion-gif-favoritos">
+                            <p class="user-gif-favoritos">User</p>
+                            <p class="titulo-gif-favoritos">Titulo GIFO</p>
+                        </div>
+                    </div>
                     <img src="https://media.giphy.com/media/fIwYOoK4V9Aha/giphy.gif" alt="" class="resultados-gif">
                 </div>
-                <div class="resultados-gif-box">
-                    <img src="https://media.giphy.com/media/fIwYOoK4V9Aha/giphy.gif" alt="" class="resultados-gif">
-                </div>
-                <div class="resultados-gif-box">
-                    <img src="https://media.giphy.com/media/fIwYOoK4V9Aha/giphy.gif" alt="" class="resultados-gif">
-                </div>
-                <div class="resultados-gif-box">
-                    <img src="https://media.giphy.com/media/fIwYOoK4V9Aha/giphy.gif" alt="" class="resultados-gif">
-                </div>
+
             </div>
+
+            <button id="favoritos-vermas" class="btn-generico">ver más</button>
 
         </section>
 
@@ -122,9 +144,10 @@
 
     </footer>
 
-
-<script src="/scripts/trending-slide.js"></script>
-<script src="/scripts/favoritos.js"></script>
+    <script src="/scripts/modo-nocturno.js"></script>
+    <script src="/scripts/trending-slide.js"></script>
+    <script src="/scripts/favoritos.js"></script>
 
 </body>
+
 </html>

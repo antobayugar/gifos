@@ -53,7 +53,7 @@
 
         <section class="main-header">
 
-            <h1 >Inspírate, busca, guarda y crea los mejores <span class="gifos">GIFOS</span></h1>
+            <h1>Inspírate, busca, guarda y crea los mejores <span class="gifos">GIFOS</span></h1>
 
             <div class="buscador-contenedor">
                 <img src="/assets/ilustra_header.svg" alt="Ilustración Header">
@@ -63,29 +63,36 @@
                     <div class="buscador-bloque">
                         <div class="buscador-y-lupa">
                             <img src="/assets/icon-search-gris.svg" alt="buscador" class="buscador-lupa-gris">
-                            <input type="text" placeholder="Busca GIFOS y más" id="input-buscador" class="input-buscador">
+                            <input type="text" placeholder="Busca GIFOS y más" id="input-buscador"
+                                class="input-buscador">
                         </div>
                         <button id="btn-buscador">
-                            <img src="/assets/icon-search.svg" alt="Buscar" id="buscador-lupa" class="icon-lupa-abierta">
-                            <img src="/assets/button-close.svg" alt="Cerrar búsqueda" id="cerrar-busqueda" class="icon-cerrar-busqueda">
+                            <img src="/assets/icon-search.svg" alt="Buscar" id="buscador-lupa"
+                                class="icon-lupa-abierta">
+                            <img src="/assets/button-close.svg" alt="Cerrar búsqueda" id="cerrar-busqueda"
+                                class="icon-cerrar-busqueda">
                         </button>
                     </div>
 
                     <ul class="buscador-sugerencias">
                         <li class="sugerencia">
-                            <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris" class="sugerencia-lupa-gris">
+                            <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris"
+                                class="sugerencia-lupa-gris">
                             <p class="buscador-sugerencia-texto" id="sugerencia1">Sugerencia 1</p>
                         </li>
                         <li class="sugerencia">
-                            <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris" class="sugerencia-lupa-gris">
+                            <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris"
+                                class="sugerencia-lupa-gris">
                             <p class="buscador-sugerencia-texto" id="sugerencia2">Sugerencia 2</p>
                         </li>
                         <li class="sugerencia">
-                            <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris" class="sugerencia-lupa-gris">
-                            <p class="buscador-sugerencia-texto" id="sugerencia3" >Sugerencia 3</p>
+                            <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris"
+                                class="sugerencia-lupa-gris">
+                            <p class="buscador-sugerencia-texto" id="sugerencia3">Sugerencia 3</p>
                         </li>
                         <li class="sugerencia">
-                            <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris" class="sugerencia-lupa-gris">
+                            <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris"
+                                class="sugerencia-lupa-gris">
                             <p class="buscador-sugerencia-texto" id="sugerencia4">Sugerencia 4</p>
                         </li>
                     </ul>
@@ -133,23 +140,35 @@
                 <p id="trending-topics"></p>
             </div>
 
-            <div id="resultados-busqueda-contenedor">
+            <div id="resultados-busqueda-contenedor" class="resultados-busqueda-contenedor">
 
-                <h2 id="titulo-busqueda">Mascotas</h2>
+                <h2 id="titulo-busqueda" class="titulo-busqueda">Mascotas</h2>
 
-                <div id="resultados-busqueda">
+                <div id="resultados-busqueda" class="resultados-busqueda">
+
                     <div class="resultados-gif-box">
+                        <div class="gif-acciones-resultados">
+                            <div class="iconos-acciones-gif">
+                                <button class="iconos-acciones-box favorito">
+                                    <img src="/assets/icon-fav-hover.svg" alt="icon-favorito">
+                                </button>
+                                <button class="iconos-acciones-box download">
+                                    <img src="/assets/icon-download.svg" alt="icon-dowlnoad">
+                                </button>
+                                <button class="iconos-acciones-box max">
+                                    <img src="/assets/icon-max.svg" alt="icon-max">
+                                </button>
+                            </div>
+                            <div class="textos-descripcion-gif-resultados">
+                                <p class="user-gif-resultados">User</p>
+                                <p class="titulo-gif-resultados">Titulo GIFO</p>
+                            </div>
+                        </div>
                         <img src="https://media.giphy.com/media/fIwYOoK4V9Aha/giphy.gif" alt="" class="resultados-gif">
                     </div>
-                    <div class="resultados-gif-box">
-                        <img src="https://media.giphy.com/media/fIwYOoK4V9Aha/giphy.gif" alt="" class="resultados-gif">
-                    </div>
-                    <div class="resultados-gif-box">
-                        <img src="https://media.giphy.com/media/fIwYOoK4V9Aha/giphy.gif" alt="" class="resultados-gif">
-                    </div>
-                    <div class="resultados-gif-box">
-                        <img src="https://media.giphy.com/media/fIwYOoK4V9Aha/giphy.gif" alt="" class="resultados-gif">
-                    </div>
+
+                    
+
                 </div>
 
                 <button id="resultados-vermas" class="btn-generico">ver más</button>
@@ -169,27 +188,6 @@
                 </div> -->
 
             <div class="trending-slider" id="trending-slider">
-
-                <!-- <div class="gif-contenedor">
-                    <div class="gif-acciones">
-                        <div class="iconos-acciones-gif">
-                            <button class="iconos-acciones-box favorito">
-                                <img src="/assets/icon-fav-hover.svg" alt="icon-favorito">
-                            </button>
-                            <button class="iconos-acciones-box download">
-                                <img src="/assets/icon-download.svg" alt="icon-dowlnoad">
-                            </button>
-                            <button class="iconos-acciones-box max">
-                                <img src="/assets/icon-max.svg" alt="icon-max">
-                            </button>
-                        </div>
-                        <div class="textos-descripcion-gif">
-                            <p class="user-gif">User</p>
-                            <p class="titulo-gif">Titulo GIFO</p>
-                        </div>
-                    </div>
-                    <img src="https://media.giphy.com/media/fIwYOoK4V9Aha/giphy.gif" alt="" class="trending-gif">
-                </div> -->
 
             </div>
 

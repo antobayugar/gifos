@@ -20,26 +20,26 @@
         <div class="navbar">
 
             <img src="/assets/logo-mobile.svg" alt="Logo" id="logo">
-            <img src="/assets/logo-desktop.svg" alt="" id="logo-desktop">
+            <img src="/assets/logo-desktop.svg" alt="Logo" id="logo-desktop">
 
             <nav>
                 <div class="menu">
                     <input type="checkbox" id="checkbox" />
 
-                    <label for="checkbox">
+                    <label for="checkbox" id="icon-hamburguesa">
                         <span class="span1"></span>
                         <span class="span2"></span>
                         <span class="span3"></span>
                     </label>
 
-                    <ul>
-                        <li><a href="#" id="menu-modo">Modo nocturno</a></li>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="favoritos.html">Favoritos</a></li>
-                        <li><a href="misgifos.html">Mis GIFOS</a></li>
+                    <ul id="ul-menu">
+                        <li><a href="#" id="menu-modo" class="menu-items">Modo nocturno</a></li>
+                        <li><a href="index.html" class="menu-items">Inicio</a></li>
+                        <li><a href="favoritos.html" class="menu-items">Favoritos</a></li>
+                        <li><a href="misgifos.html" class="menu-items">Mis GIFOS</a></li>
                         <li><a href="creargifo.html" class="menu-creargifo">
-                                <img src="/assets/button-crear-gifo.svg" alt="" class="mas-violeta">
-                                <img src="/assets/button-crear-gifo-hover.svg" alt="" class="mas-blanco">
+                                <img src="/assets/button-crear-gifo.svg" alt="Crear Gifo" class="mas-violeta">
+                                <img src="/assets/button-crear-gifo-hover.svg" alt="Crear Gifo" class="mas-blanco">
                             </a></li>
                     </ul>
                 </div>
@@ -50,6 +50,65 @@
     </header>
 
 <main>
+
+    <section class="header-misgifos">
+
+        <img src="/assets/icon-mis-gifos.svg" alt="misgifos">
+
+        <h1>Mis GIFOS</h1>
+
+    </section>
+
+    <section id="misgifos-vacio">
+
+        <img src="/assets/icon-mis-gifos-sin-contenido.svg" alt="mis gifos sin contenido">
+        <h3>¡Animate a crear tu primer GIFO!</h3>
+
+    </section>
+
+    
+    <section id="misgifos-creados">
+
+        <div class="resultados-misgifos">
+
+            <div class="resultados-gif-box-misgifos">
+                <div class="gif-acciones-resultados-misgifos">
+                    <div class="iconos-acciones-gif">
+                        <button class="iconos-acciones-box borrar">
+                            <img src="/assets/icon_trash.svg" alt="icon-borrar">
+                        </button>
+                        <button class="iconos-acciones-box download">
+                            <img src="/assets/icon-download.svg" alt="icon-dowlnoad">
+                        </button>
+                        <button class="iconos-acciones-box max">
+                            <img src="/assets/icon-max.svg" alt="icon-max">
+                        </button>
+                    </div>
+                    <div class="textos-descripcion-gif-misgifos">
+                        <p class="user-gif-misgifos">User</p>
+                        <p class="titulo-gif-misgifos">Titulo GIFO</p>
+                    </div>
+                </div>
+                <img src="https://media.giphy.com/media/fIwYOoK4V9Aha/giphy.gif" alt="" class="resultados-gif">
+            </div>
+
+        </div>
+
+        <button id="favoritos-vermas" class="btn-generico">ver más</button>
+
+    </section>
+
+
+
+    <section class="trending">
+
+        <h2>Trending GIFOS</h2>
+        <p>Mira los últimos GIFOS de nuestra comunidad.</p>
+
+        <div class="trending-slider" id="trending-slider">
+        </div>
+
+    </section>
 
 </main>
 
@@ -87,5 +146,7 @@
 
     </footer>
     
+    <script src="/scripts/modo-nocturno.js"></script>
+    <script src="/scripts/trending-slide.js"></script>
     <script src="/scripts/misgifos.js"></script>
 </body>
