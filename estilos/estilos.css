@@ -1433,6 +1433,13 @@ footer .datos .footer-copyright p {
 }
 
 @media screen and (min-width: 1440px) {
+  /*     body {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+    } */
   .main-creargifo {
     text-align: center;
   }
@@ -1548,12 +1555,12 @@ footer .datos .footer-copyright p {
     color: #50E3C2;
   }
   .main-creargifo .ilus-grabar-contenedor .div-grabacion .recuadro-grabacion .video-contenedor #texto-grabargifo {
-    display: none;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 16px;
     line-height: 23px;
     text-align: center;
+    color: #000000;
     font-size: 16px;
     line-height: 29px;
     margin: 0;
@@ -1618,6 +1625,11 @@ footer .datos .footer-copyright p {
   .main-creargifo .ilus-grabar-contenedor .div-grabacion .recuadro-grabacion .video-contenedor #grabacion-video {
     display: none;
   }
+  .main-creargifo .ilus-grabar-contenedor .div-grabacion .recuadro-grabacion .video-contenedor #gif-grabado {
+    display: none;
+    width: 480px;
+    height: 320px;
+  }
   .main-creargifo .ilus-grabar-contenedor .div-grabacion div {
     height: 75px;
     display: -webkit-box;
@@ -1628,7 +1640,7 @@ footer .datos .footer-copyright p {
             justify-content: center;
     position: relative;
   }
-  .main-creargifo .ilus-grabar-contenedor .div-grabacion div .crear-pasos div {
+  .main-creargifo .ilus-grabar-contenedor .div-grabacion div .crear-pasos p {
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -1643,21 +1655,17 @@ footer .datos .footer-copyright p {
         -ms-flex-align: center;
             align-items: center;
     margin-right: 25px;
-  }
-  .main-creargifo .ilus-grabar-contenedor .div-grabacion div .crear-pasos div p {
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-size: 18px;
     line-height: 21px;
     color: #572EE5;
   }
-  .main-creargifo .ilus-grabar-contenedor .div-grabacion div .crear-pasos div .paso-activo-texto {
-    color: #ffffff;
-  }
   .main-creargifo .ilus-grabar-contenedor .div-grabacion div .crear-pasos .paso-activo {
     background-color: #572EE5;
+    color: #ffffff;
   }
-  .main-creargifo .ilus-grabar-contenedor .div-grabacion div .crear-pasos div:last-child {
+  .main-creargifo .ilus-grabar-contenedor .div-grabacion div .crear-pasos p:last-child {
     margin-right: 0;
   }
   .main-creargifo .ilus-grabar-contenedor .div-grabacion div .contador-contenedor {
@@ -1665,6 +1673,7 @@ footer .datos .footer-copyright p {
     right: 0;
   }
   .main-creargifo .ilus-grabar-contenedor .div-grabacion div .contador-contenedor #contador-grabacion {
+    display: none;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     text-align: center;
@@ -1673,7 +1682,8 @@ footer .datos .footer-copyright p {
     line-height: 22px;
     color: #572EE5;
   }
-  .main-creargifo .ilus-grabar-contenedor .div-grabacion div .contador-contenedor button {
+  .main-creargifo .ilus-grabar-contenedor .div-grabacion div .contador-contenedor #contador-repetircaptura {
+    display: none;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     text-align: center;
@@ -1686,7 +1696,7 @@ footer .datos .footer-copyright p {
     border-bottom: 2px solid #ffffff;
     cursor: pointer;
   }
-  .main-creargifo .ilus-grabar-contenedor .div-grabacion div .contador-contenedor button:hover {
+  .main-creargifo .ilus-grabar-contenedor .div-grabacion div .contador-contenedor #contador-repetircaptura:hover {
     border-bottom: 2px solid #50E3C2;
   }
   .main-creargifo .ilus-grabar-contenedor .div-pelicula {
@@ -1707,24 +1717,27 @@ footer .datos .footer-copyright p {
     background-color: #572EE5;
     margin: 0 auto 20px;
   }
-  .main-creargifo #btn-creargifo-comenzar {
-    font-weight: 600;
-    margin-bottom: 26px;
+  .main-creargifo .botones-creargifo-contenedor {
+    text-align: center;
   }
-  .main-creargifo #btn-creargifo-grabar {
+  .main-creargifo .botones-creargifo-contenedor #btn-creargifo-comenzar {
+    font-weight: 600;
+    margin: 0 auto 26px;
+  }
+  .main-creargifo .botones-creargifo-contenedor #btn-creargifo-grabar {
     display: none;
     font-weight: 600;
-    margin-bottom: 26px;
+    margin: 0 auto 26px;
   }
-  .main-creargifo #btn-creargifo-finalizar {
+  .main-creargifo .botones-creargifo-contenedor #btn-creargifo-finalizar {
     display: none;
     font-weight: 600;
-    margin-bottom: 26px;
+    margin: 0 auto 26px;
   }
-  .main-creargifo #btn-creargifo-subirgifo {
+  .main-creargifo .botones-creargifo-contenedor #btn-creargifo-subirgifo {
     display: none;
     font-weight: 600;
-    margin-bottom: 26px;
+    margin: 0 auto 26px;
   }
 }
 

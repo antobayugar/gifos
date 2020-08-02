@@ -1,4 +1,12 @@
 @media screen and (min-width: 1440px) {
+    /*     body {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+    } */
+
     .main-creargifo {
         text-align: center;
 
@@ -98,8 +106,9 @@
                         }
 
                         #texto-grabargifo {
-                            display: none;
+                            //display: none;
                             @include textos-mobile;
+                            color: $negro;
                             font-size: 16px;
                             line-height: 29px;
                             margin: 0;
@@ -169,6 +178,12 @@
                         #grabacion-video {
                             display: none;
                         }
+
+                        #gif-grabado {
+                            display: none;
+                            width: 480px;
+                            height: 320px;
+                        }
                     }
                 }
 
@@ -179,7 +194,7 @@
                     position: relative;
 
                     .crear-pasos {
-                        div {
+                        p {
                             width: 32px;
                             height: 32px;
                             border-radius: 50%;
@@ -189,24 +204,19 @@
                             align-items: center;
                             margin-right: 25px;
 
-                            p {
-                                font-family: $roboto;
-                                font-weight: 300;
-                                font-size: 18px;
-                                line-height: 21px;
-                                color: $violeta;
-                            }
-
-                            .paso-activo-texto {
-                                color: $blanco;
-                            }
+                            font-family: $roboto;
+                            font-weight: 300;
+                            font-size: 18px;
+                            line-height: 21px;
+                            color: $violeta;
                         }
 
                         .paso-activo {
                             background-color: $violeta;
+                            color: $blanco;
                         }
 
-                        div:last-child {
+                        p:last-child {
                             margin-right: 0;
                         }
                     }
@@ -216,13 +226,15 @@
                         right: 0;
 
                         #contador-grabacion {
+                            display: none;
                             @include titulos;
                             font-size: 15px;
                             line-height: 22px;
                             color: $violeta;
                         }
 
-                        button {
+                        #contador-repetircaptura {
+                            display: none;
                             @include titulos;
                             font-size: 13px;
                             line-height: 16px;
@@ -233,7 +245,7 @@
                             cursor: pointer;
                         }
 
-                        button:hover {
+                        #contador-repetircaptura:hover {
                             border-bottom: 2px solid $turquesa;
                         }
                     }
@@ -262,27 +274,31 @@
             margin: 0 auto 20px;
         }
 
-        #btn-creargifo-comenzar {
-            font-weight: 600;
-            margin-bottom: 26px;
-        }
+        .botones-creargifo-contenedor {
+            text-align: center;
 
-        #btn-creargifo-grabar {
-            display: none;
-            font-weight: 600;
-            margin-bottom: 26px;
-        }
+            #btn-creargifo-comenzar {
+                font-weight: 600;
+                margin: 0 auto 26px;
+            }
 
-        #btn-creargifo-finalizar {
-            display: none;
-            font-weight: 600;
-            margin-bottom: 26px;
-        }
+            #btn-creargifo-grabar {
+                display: none;
+                font-weight: 600;
+                margin: 0 auto 26px;
+            }
 
-        #btn-creargifo-subirgifo {
-            display: none;
-            font-weight: 600;
-            margin-bottom: 26px;
+            #btn-creargifo-finalizar {
+                display: none;
+                font-weight: 600;
+                margin: 0 auto 26px;
+            }
+
+            #btn-creargifo-subirgifo {
+                display: none;
+                font-weight: 600;
+                margin: 0 auto 26px;
+            }
         }
     }
 }
