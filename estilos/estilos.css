@@ -601,6 +601,7 @@ footer .datos .footer-copyright p {
   text-align: left;
   line-height: 19px;
   font-weight: 300;
+  cursor: pointer;
 }
 
 .resultados-busqueda-contenedor {

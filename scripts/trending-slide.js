@@ -16,7 +16,7 @@ function trendingGifos() {
     .then(content => {
         //object with data, pagination, meta
         let trendingGifArray = content.data;
-        console.log("Trending GIFOS", trendingGifArray);
+        //console.log("Trending GIFOS", trendingGifArray);
         //console.log("META Trending GIFOS", content.meta);
 
         let trendingGIFOhtml = "";
