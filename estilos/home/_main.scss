@@ -176,8 +176,9 @@
 }
 
 //estilos de la seccion RESULTADOS BUSQUEDA agregada con js
-.resultados-busqueda-contenedor { //la seccion entera con titulo
-    display: block;
+.resultados-busqueda-contenedor {
+    //la seccion entera con titulo
+    display: none;
     position: relative;
     margin-top: 35px;
     text-align: center;
@@ -202,7 +203,8 @@
     line-height: 40px;
 }
 
-.resultados-busqueda { //el contenedor con las 4 columnas
+.resultados-busqueda {
+    //el contenedor con las 4 columnas
     margin: 38px 10px 53px 10px;
     display: flex;
     flex-wrap: wrap;
@@ -210,9 +212,10 @@
     justify-content: center;
 }
 
-.resultados-gif-box { //la caja con cada gif
+.resultados-gif-box {
+    //la caja con cada gif
     width: 156px;
-    height: 120px; 
+    height: 120px;
     overflow: hidden;
     margin: 0 10px 25px 10px;
 }
@@ -239,6 +242,21 @@
     line-height: 16px;
     text-align: center;
     text-transform: uppercase;
+}
+
+.busqueda-error-contenedor {
+    margin-top: 40px;
+}
+
+.busqueda-error-img {
+    width: 120px;
+}
+
+.busqueda-error-texto {
+    @include titulos;
+    color: $turquesa;
+    font-size: 18px;
+    line-height: 28px;
 }
 
 @media screen and (min-width: 1440px) {
@@ -343,5 +361,21 @@
     .btn-generico:hover {
         background-color: $violeta;
         color: $blanco;
+    }
+
+    .busqueda-error-contenedor {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    
+    .busqueda-error-img {
+        margin-top: 0;
+        width: 150px;
+    }
+    
+    .busqueda-error-texto {
+        margin-top: 29px;
+        font-size: 22px;
+        line-height: 25px;
     }
 }

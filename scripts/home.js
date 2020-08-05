@@ -23,10 +23,8 @@ let sugerencia2 = document.getElementById('sugerencia2');
 let sugerencia3 = document.getElementById('sugerencia3');
 let sugerencia4 = document.getElementById('sugerencia4');
 
-// keyup: se agranda el div y se muestran sugerencias
+// cuando se agranda el div y se muestran sugerencias:
 inputBuscador.addEventListener('keyup', buscadorActivo);
-
-btnBuscar.addEventListener('click', busquedaGifos);
 
 function buscadorActivo() {
     busqueda = inputBuscador.value;
@@ -49,18 +47,43 @@ function buscadorActivo() {
         })
 }
 
+let listaSugerencias = document.getElementById('buscador-sugerencias');
+
 function sugerenciasData(data) {
     let sugerencia = data.data;
-    sugerencia1.innerText = sugerencia[0].name;
-    sugerencia2.innerText = sugerencia[1].name;
-    sugerencia3.innerText = sugerencia[2].name;
-    sugerencia4.innerText = sugerencia[3].name;
+    listaSugerencias.innerHTML = `
+    <li class="sugerencia">
+        <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris"
+        class="sugerencia-lupa-gris">
+        <p class="buscador-sugerencia-texto" id="sugerencia1">${sugerencia[0].name}</p>
+    </li>
+    <li class="sugerencia">
+        <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris"
+        class="sugerencia-lupa-gris">
+        <p class="buscador-sugerencia-texto" id="sugerencia2">${sugerencia[1].name}</p>
+    </li>
+    <li class="sugerencia">
+        <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris"
+        class="sugerencia-lupa-gris">
+        <p class="buscador-sugerencia-texto" id="sugerencia3">${sugerencia[2].name}</p>
+    </li>
+    <li class="sugerencia">
+        <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris"
+        class="sugerencia-lupa-gris">
+        <p class="buscador-sugerencia-texto" id="sugerencia4">${sugerencia[3].name}</p>
+    </li>`;
 }
 
-//agrego funcionalidad para el boton "cerrar busqueda":
-btnCerrarBusqueda.addEventListener('click', cerrarBusqueda);
+//funcion sugerencias: cuando se clickea una se hace la busqueda de ese termino
+listaSugerencias.addEventListener('click', function (li) {
+    inputBuscador.value = li.target.textContent;
+    busquedaGifos();
+})
 
-function cerrarBusqueda() {
+//cuando cierro la busqueda:
+btnCerrarBusqueda.addEventListener('click', limpiarBusqueda);
+
+function limpiarBusqueda() {
     //vacío el input y devuelvo las clases del contenedor a como estaban
     inputBuscador.value = "";
     inputBuscador.placeholder = "Busca GIFOS y más";
@@ -72,9 +95,15 @@ function cerrarBusqueda() {
     //faltaria agregar que se cierre cuando se borra todo
 }
 
-let resultadosBusquedaContenedor = document.getElementById('resultados-busqueda');
+//cuando hago la busqueda:
+btnBuscar.addEventListener('click', busquedaGifos);
+inputBuscador.addEventListener('keyup', function (e) {
+    if (e.keyCode === 13) {
+        busquedaGifos();
+    }
+});
 
-//2. Resultados de la busqueda: cuando se clickea el boton LUPA aparecen los primeros resultados traidos de la API
+//Resultados de la busqueda: cuando se clickea el boton LUPA aparecen los primeros resultados traidos de la API
 function busquedaGifos() {
     event.preventDefault();
     let urlBusqueda = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&limit=4&q=`;
@@ -82,7 +111,7 @@ function busquedaGifos() {
     urlBusqueda = urlBusqueda.concat(strBusqueda);
     //console.log(urlBusqueda);
 
-    fetch(urlBusqueda)
+    return fetch(urlBusqueda)
         .then(response => response.json())
         .then(content => {
             //console.log(content.data);
@@ -91,16 +120,38 @@ function busquedaGifos() {
         .catch(error => {
             console.log("error busqueda" + error)
         })
+
+    cerrarBusqueda()
 }
 
-
 function traerBusqueda(content) {
+    //aparece el div con el titulo y resultados
+    let contenedorResultadosBusqueda = document.getElementById('resultados-busqueda-contenedor');
+    contenedorResultadosBusqueda.style.display = "block";
+
+    //agrego el titulo de la busqueda
+    let tituloBusqueda = document.getElementById('titulo-busqueda');
+    tituloBusqueda.innerHTML = inputBuscador.value;
+
+    //traigo los resultados gif, les pongo las clases etc
+    let resultadosBusquedaGIFOS = document.getElementById('resultados-busqueda');
     let resultadosBusquedaArray = content.data;
     let resultadoGIFOhtml = "";
+    let btnVerMasResultados = document.getElementById('resultados-vermas');
 
-    for (let i = 0; i < resultadosBusquedaArray.length; i++) {
-        let resultadoGIFO = resultadosBusquedaArray[i];
-        resultadoGIFOhtml += `
+    if (resultadosBusquedaArray.length == 0) {
+        resultadosBusquedaGIFOS.innerHTML = `
+        <div class="busqueda-error-contenedor">
+        <img src="/assets/icon-busqueda-sin-resultado.svg" alt="Busqueda sin resultado" class="busqueda-error-img">
+        <h3 class="busqueda-error-texto">Intenta con otra búsqueda</h3>
+        </div>
+        `;
+        btnVerMasResultados.style.display = "none";
+
+    } else {
+        for (let i = 0; i < resultadosBusquedaArray.length; i++) {
+            let resultadoGIFO = resultadosBusquedaArray[i];
+            resultadoGIFOhtml += `
                 <div class="resultados-gif-box">
                 <div class="gif-acciones-resultados">
                     <div class="iconos-acciones-gif">
@@ -122,10 +173,19 @@ function traerBusqueda(content) {
                 <img src="${resultadoGIFO.images.downsized.url}" alt="${resultadoGIFO.title}" class="resultados-gif">
             </div>
                 `
+        }
+        resultadosBusquedaGIFOS.innerHTML = resultadoGIFOhtml;
     }
-
-    resultadosBusquedaContenedor.innerHTML = resultadoGIFOhtml;
 }
+
+function cerrarBusqueda() {
+    //achico el contenedor de la busqueda
+    bloqueBuscador.classList.add('buscador');
+    bloqueBuscador.classList.remove('buscador-activo');
+    iconBuscar.style.display = "block";
+    btnCerrarBusqueda.style.display = "none";
+}
+
 
 
 
@@ -139,7 +199,10 @@ function traerBusqueda(content) {
 //2. reemplazo el texto con los resultados
 
 let trendingTopicsTexto = document.getElementById('trending-topics');
-window.onload = trendingTopics();
+trendingTopicsTexto.innerHTML = `<span id="link-prueba-trending">hola como estas</span>`;
+let linkpruebatrending = document.getElementById('link-prueba-trending');
+linkpruebatrending.style.color = "red";
+//window.onload = trendingTopics();
 
 function trendingTopics() {
     let url = `https://api.giphy.com/v1/trending/searches?api_key=${apiKey}`;
@@ -149,11 +212,15 @@ function trendingTopics() {
         .then(content => {
             //object with data & meta
             let topics = content.data;
-            //console.log("Trending Topics", topics);
+            console.log("Trending Topics", topics);
             //console.log("META Trending Topics", content.meta);
             trendingTopicsTexto.innerText = topics[0] + ", " + topics[1] + ", " + topics[2] + ", " + topics[3] + ", " + topics[4];
         })
         .catch(err => {
-            console.log("error trending" + err);
+            console.log("error trending topics" + err);
         })
+}
+
+function trendingTopicsLinks(content) {
+
 }

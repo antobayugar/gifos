@@ -605,7 +605,7 @@ footer .datos .footer-copyright p {
 }
 
 .resultados-busqueda-contenedor {
-  display: block;
+  display: none;
   position: relative;
   margin-top: 35px;
   text-align: center;
@@ -679,6 +679,24 @@ footer .datos .footer-copyright p {
   line-height: 16px;
   text-align: center;
   text-transform: uppercase;
+}
+
+.busqueda-error-contenedor {
+  margin-top: 40px;
+}
+
+.busqueda-error-img {
+  width: 120px;
+}
+
+.busqueda-error-texto {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  text-align: center;
+  color: #572EE5;
+  color: #50E3C2;
+  font-size: 18px;
+  line-height: 28px;
 }
 
 @media screen and (min-width: 1440px) {
@@ -771,6 +789,19 @@ footer .datos .footer-copyright p {
   .btn-generico:hover {
     background-color: #572EE5;
     color: #ffffff;
+  }
+  .busqueda-error-contenedor {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .busqueda-error-img {
+    margin-top: 0;
+    width: 150px;
+  }
+  .busqueda-error-texto {
+    margin-top: 29px;
+    font-size: 22px;
+    line-height: 25px;
   }
 }
 
