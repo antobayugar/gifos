@@ -1,19 +1,19 @@
 //MODO OSCURO
 
 //como hago para que se mantenga clickeado cuando navego en el sitio??
+let darkModeStorage = localStorage.getItem("darkMode");
 
-
-let modoColor = document.getElementById('menu-modo');
-modoColor.addEventListener('click', cambioEstilos);
+let darkMode = document.getElementById('menu-modo');
+darkMode.addEventListener('click', cambioEstilos);
 
 function cambioEstilos() {
 
     //se cambia el texto del boton a "modo diurno"
-    if (modoColor.innerHTML == 'Modo nocturno') {
-        modoColor.innerHTML = 'Modo diurno';
+    if (darkMode.innerHTML == 'Modo nocturno') {
+        darkMode.innerHTML = 'Modo diurno';
     }
     else {
-        modoColor.innerHTML = 'Modo nocturno';
+        darkMode.innerHTML = 'Modo nocturno';
     }
 
     //para cambiar logo llamo funcion
@@ -53,7 +53,7 @@ function cambioLogos() {
     let logoMobile = document.getElementById('logo');
     let logoDesktop = document.getElementById('logo-desktop');
 
-    if (modoColor.innerHTML == 'Modo nocturno') {
+    if (darkMode.innerHTML == 'Modo nocturno') {
         logoDesktop.setAttribute("src", "/assets/logo-desktop.svg");
         logoMobile.setAttribute("src", "/assets/logo-mobile.svg");
     } else {
@@ -66,9 +66,9 @@ function cambioIconoCrearGifo() {
     let iconoCrearGifo = document.querySelector('.mas-violeta');
     let iconoCrearGifoHover = document.querySelector('.mas-blanco');
 
-    if (modoColor.innerHTML == 'Modo nocturno') {
+    if (darkMode.innerHTML == 'Modo nocturno') {
         iconoCrearGifo.setAttribute("src", "/assets/button-crear-gifo.svg");
-    iconoCrearGifoHover.setAttribute("src", "/assets/button-crear-gifo-hover.svg");
+        iconoCrearGifoHover.setAttribute("src", "/assets/button-crear-gifo-hover.svg");
     } else {
         iconoCrearGifo.setAttribute("src", "/assets/button-crear-gifo-hover.svg");
         iconoCrearGifoHover.setAttribute("src", "/assets/button-crear-gifo-dark.svg");

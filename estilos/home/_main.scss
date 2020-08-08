@@ -1,4 +1,8 @@
 //estilos seccion busqueda (ilustracion, buscador y trending topics)
+body {
+    background-color: var(--main-bg-color);
+}
+
 .main-header {
     h1 {
         @include titulos;

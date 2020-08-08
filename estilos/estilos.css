@@ -1,10 +1,22 @@
+/* body {
+    --main-bg-color: yellow;
+    --main-txt-color: blue;  
+    --main-padding: 15px;  
+  }
+
+  body.dark {
+    --main-bg-color: red;
+    --main-txt-color: blue;  
+    --main-padding: 15px;  
+  }
+   */
 .linea-violeta {
   height: 5px;
   background-color: #572EE5;
   width: 100%;
 }
 
-.linea-dark {
+.dark .linea-violeta {
   background-color: #000000;
 }
 
@@ -398,6 +410,10 @@ footer .datos .footer-copyright p {
   footer .datos .footer-copyright p {
     font-size: 13px;
   }
+}
+
+body {
+  background-color: var(--main-bg-color);
 }
 
 .main-header h1 {
