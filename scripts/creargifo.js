@@ -76,25 +76,7 @@ function comenzarGifo() {
     /* .then (apareceVideo()) */
 }
 
-/* function apareceVideo(mediaStream) {
-    tituloGrabar.style.display = "none";
-    textoGrabar.style.display = "none";
-    btnGrabar.style.display = "block";
 
-    pasoActivo[0].classList.remove('paso-activo');
-    pasoActivo[1].classList.add('paso-activo');
-
-    //aparece el video
-    video.style.display = "block";
-    video.srcObject = mediaStream;
-    video.onloadedmetadata = function (e) {
-        video.play();
-    };
-
-    recorder = RecordRTC(mediaStream, {
-        type: 'gif'
-    });
-} */
 
 //3: clickeo el boton GRABAR: comienza la grabacion del gif, el boton cambia a FINALIZAR, aparece el contador de segundos
 btnGrabar.addEventListener('click', grabarGifo);

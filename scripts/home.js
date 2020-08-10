@@ -46,22 +46,22 @@ function sugerenciasData(data) {
     let sugerencia = data.data;
     listaSugerencias.innerHTML = `
     <li class="sugerencia">
-        <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris"
+        <img src="./assets/icon-search-gris.svg" alt="sugerencia-lupa-gris"
         class="sugerencia-lupa-gris">
         <p class="buscador-sugerencia-texto" >${sugerencia[0].name}</p>
     </li>
     <li class="sugerencia">
-        <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris"
+        <img src="./assets/icon-search-gris.svg" alt="sugerencia-lupa-gris"
         class="sugerencia-lupa-gris">
         <p class="buscador-sugerencia-texto" >${sugerencia[1].name}</p>
     </li>
     <li class="sugerencia">
-        <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris"
+        <img src="./assets/icon-search-gris.svg" alt="sugerencia-lupa-gris"
         class="sugerencia-lupa-gris">
         <p class="buscador-sugerencia-texto" >${sugerencia[2].name}</p>
     </li>
     <li class="sugerencia">
-        <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris"
+        <img src="./assets/icon-search-gris.svg" alt="sugerencia-lupa-gris"
         class="sugerencia-lupa-gris">
         <p class="buscador-sugerencia-texto" >${sugerencia[3].name}</p>
     </li>`;
@@ -121,7 +121,7 @@ function busquedaGifos() {
             if (content.data == 0) {
                 resultadosBusquedaGIFOS.innerHTML = `
                     <div class="busqueda-error-contenedor">
-                    <img src="/assets/icon-busqueda-sin-resultado.svg" alt="Busqueda sin resultado" class="busqueda-error-img">
+                    <img src="./assets/icon-busqueda-sin-resultado.svg" alt="Busqueda sin resultado" class="busqueda-error-img">
                     <h3 class="busqueda-error-texto">Intenta con otra búsqueda</h3>
                     </div>
                     `;
@@ -205,7 +205,7 @@ function busquedaGifosVerMas() {
             if (content.data == 0) {
                 resultadosBusquedaGIFOS.innerHTML = `
                     <div class="busqueda-error-contenedor">
-                    <img src="/assets/icon-busqueda-sin-resultado.svg" alt="Busqueda sin resultado" class="busqueda-error-img">
+                    <img src="./assets/icon-busqueda-sin-resultado.svg" alt="Busqueda sin resultado" class="busqueda-error-img">
                     <h3 class="busqueda-error-texto">Intenta con otra búsqueda</h3>
                     </div>
                     `;

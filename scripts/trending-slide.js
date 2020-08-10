@@ -28,13 +28,13 @@ function trendingGifos() {
                     <div class="gif-acciones">
                         <div class="iconos-acciones-gif">
                             <button class="iconos-acciones-box favorito">
-                                <img src="/assets/icon-fav-hover.svg" alt="icon-favorito">
+                                <img src="./assets/icon-fav-hover.svg" alt="icon-favorito">
                             </button>
                             <button class="iconos-acciones-box download">
-                                <img src="/assets/icon-download.svg" alt="icon-download">
+                                <img src="./assets/icon-download.svg" alt="icon-download">
                             </button>
                             <button class="iconos-acciones-box max">
-                                <img src="/assets/icon-max.svg" alt="icon-max">
+                                <img src="./assets/icon-max.svg" alt="icon-max">
                             </button>
                         </div>
                         <div class="textos-descripcion-gif">
