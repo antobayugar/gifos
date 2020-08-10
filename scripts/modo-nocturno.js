@@ -1,5 +1,6 @@
 //MODO OSCURO
 let body = document.getElementById('body');
+let url = window.location.pathname;
 
 let darkModeStorage = localStorage.getItem("darkMode");
 let darkModeBtn = document.getElementById('menu-modo');
@@ -15,11 +16,16 @@ let darkModeActivado = () => {
     cambioIconoCrearGifo();
 
     //home
-    //funcion cambiar icono lupa violeta
-    cambioIconosBusqueda();
+    if (url === "/index.html") {
+        //funcion cambiar icono lupa violeta
+        cambioIconosBusqueda();
+    }
 
     //crear gifos
-    //funcion cambiar imagenes camaras
+    if (url === "/creargifo.html") {
+        //funcion cambiar imagenes camaras
+        cambioCamaras();
+    }
 
     localStorage.setItem("darkMode", "activado");
 }
@@ -34,8 +40,16 @@ let darkModeDesactivado = () => {
     cambioIconoCrearGifo();
 
     //home
-    //funcion cambiar icono lupa violeta
-    cambioIconosBusqueda();
+    if (url === "/index.html") {
+        //funcion cambiar icono lupa violeta
+        cambioIconosBusqueda();
+    }
+
+    //crear gifos
+    if (url === "/creargifo.html") {
+        //funcion cambiar imagenes camaras
+        cambioCamaras();
+    }
 
     localStorage.setItem("darkMode", null);
 }
@@ -97,4 +111,17 @@ function cambioIconosBusqueda() {
         btnCerrarBusqueda.setAttribute("src", "./assets/button-close-modo-noc.svg");
     }
 
+}
+
+function cambioCamaras() {
+    let camaraIlus = document.getElementById('camara-ilustracion');
+    let peliculaIlus = document.getElementById('pelicula-ilus');
+
+    if (darkModeBtn.innerHTML == 'Modo nocturno') {
+        camaraIlus.setAttribute("src", "./assets/camara.svg");
+        peliculaIlus.setAttribute("src", "./assets/pelicula.svg");
+    } else {
+        camaraIlus.setAttribute("src", "./assets/camara-modo-noc.svg");
+        peliculaIlus.setAttribute("src", "./assets/pelicula-modo-noc.svg");
+    }
 }
