@@ -48,22 +48,22 @@ function sugerenciasData(data) {
     <li class="sugerencia">
         <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris"
         class="sugerencia-lupa-gris">
-        <p class="buscador-sugerencia-texto" id="sugerencia1">${sugerencia[0].name}</p>
+        <p class="buscador-sugerencia-texto" >${sugerencia[0].name}</p>
     </li>
     <li class="sugerencia">
         <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris"
         class="sugerencia-lupa-gris">
-        <p class="buscador-sugerencia-texto" id="sugerencia2">${sugerencia[1].name}</p>
+        <p class="buscador-sugerencia-texto" >${sugerencia[1].name}</p>
     </li>
     <li class="sugerencia">
         <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris"
         class="sugerencia-lupa-gris">
-        <p class="buscador-sugerencia-texto" id="sugerencia3">${sugerencia[2].name}</p>
+        <p class="buscador-sugerencia-texto" >${sugerencia[2].name}</p>
     </li>
     <li class="sugerencia">
         <img src="/assets/icon-search-gris.svg" alt="sugerencia-lupa-gris"
         class="sugerencia-lupa-gris">
-        <p class="buscador-sugerencia-texto" id="sugerencia4">${sugerencia[3].name}</p>
+        <p class="buscador-sugerencia-texto" >${sugerencia[3].name}</p>
     </li>`;
 }
 
@@ -109,7 +109,7 @@ function busquedaGifos() {
         .then(response => response.json())
         .then(content => {
             resultadosBusquedaGIFOS.innerHTML = "";
-            //console.log(content.data);
+            console.log(content.data);
             //aparece el div con el titulo y resultados
             let contenedorResultadosBusqueda = document.getElementById('resultados-busqueda-contenedor');
             contenedorResultadosBusqueda.style.display = "block";
@@ -145,8 +145,8 @@ function traerBusqueda(content) {
                 <div class="resultados-gif-box">
                 <div class="gif-acciones-resultados">
                     <div class="iconos-acciones-gif">
-                        <button class="iconos-acciones-box favorito">
-                            <img src="/assets/icon-fav-hover.svg" alt="icon-favorito">
+                        <button class="iconos-acciones-box favorito" onclick="agregarFavorito('${content.id}')">
+                            <img src="/assets/icon-fav-hover.svg" alt="icon-favorito" id="icon-fav-${content.id}">
                         </button>
                         <button class="iconos-acciones-box download">
                             <img src="/assets/icon-download.svg" alt="icon-dowlnoad">
@@ -164,6 +164,8 @@ function traerBusqueda(content) {
             </div>
                 `;
 }
+
+
 
 function cerrarBoxBusqueda() {
     //achico el contenedor de la busqueda
@@ -223,11 +225,7 @@ function busquedaGifosVerMas() {
 // TRENDING TOPICS
 //1. traigo los 5 primer trending topics de la API
 //2. reemplazo el texto con los resultados
-
 let trendingTopicsTexto = document.getElementById('trending-topics');
-
-/* let linkpruebatrending = document.getElementById('link-prueba-trending');
-linkpruebatrending.style.color = "red"; */
 window.onload = trendingTopics();
 
 function trendingTopics() {
@@ -239,13 +237,18 @@ function trendingTopics() {
             //object with data & meta
             let topics = content.data;
             //console.log("Trending Topics", topics);
-            trendingTopicsTexto.innerHTML = `<span id=${topics[0]}>${topics[0]}, </span><span id=${topics[1]}>${topics[1]}, </span><span id=${topics[2]}>${topics[2]}, </span><span id=${topics[3]}>${topics[3]}, </span><span id=${topics[4]}>${topics[4]}, </span>`;
+            trendingTopicsTexto.innerHTML = `<span class="trending-topics-link">${topics[0]}</span>, <span class="trending-topics-link">${topics[1]}</span>, <span class="trending-topics-link">${topics[2]}</span>, <span class="trending-topics-link">${topics[3]}</span>, <span class="trending-topics-link">${topics[4]}</span>`;
+            
+            let topicBtn = document.getElementsByClassName('trending-topics-link');
+            for(let x=0; x < topicBtn.length; x++){
+                topicBtn[x].addEventListener('click', function (e) {
+                    inputBuscador.value = topics[x];
+                    busquedaGifos();
+                })
+            }
+
         })
         .catch(err => {
             console.log("error trending topics" + err);
         })
-}
-
-function trendingTopicsLinks(content) {
-
 }

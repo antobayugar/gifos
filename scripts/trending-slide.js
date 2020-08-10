@@ -9,7 +9,7 @@ let sliderTrendingGifos = document.getElementById('trending-slider');
 trendingGifos();
 
 function trendingGifos() {
-    let url = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=4`;
+    let url = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=8`;
     
     fetch(url)
     .then(resp => resp.json() ) //me trae el json con los 4 trending gifos

@@ -1,82 +1,90 @@
 //menu mobile
-.linea-dark {
-    background-color: $negro;
-}
 
-header {
-    .navbar {
-        nav {
-            .menu {
-                ul {
-                    li {
-                        .menu-items-dark {
-                            color: $blanco;
+.body-dark {
+    background-color: $gris-oscuro;
+
+    .linea-violeta {
+        background-color: $negro;
+    }
+
+    header {
+        .navbar {
+            background-color: $gris-oscuro;
+
+            nav {
+                .menu {
+                    ul {
+                        background-color: $negro;
+
+                        li {
+                            .menu-items {
+                                color: $blanco;
+                            }
+                        }
+
+                        li:first-child .menu-items {
+                            padding-top: 0;
                         }
                     }
 
-                    li:first-child .menu-items {
-                        padding-top: 0;
+                    label {
+                        span {
+                            background-color: $blanco;
+                        }
                     }
-                }
 
-                .ul-dark {
-                    background-color: $negro;
-                }
+                    /* lo que pasa cuando apreto el checkbox*/
 
-                label {
-                    .span-dark {
+                    input:checked ~ label span {
                         background-color: $blanco;
                     }
                 }
-
-                /* lo que pasa cuando apreto el checkbox*/
-
-                input:checked ~ label .span-dark {
-                    background-color: $blanco;
-                }
             }
         }
-    }
 
-    .navbar-dark {
-        background-color: $gris-oscuro;
+        
     }
 }
 
 //menu desktop
 @media screen and (min-width: 750px) {
-    header {
-        .navbar {
-            nav {
-                .menu {
-                    ul {
-                        li {
-                            .menu-items-dark {
-                                color: $blanco;
-                                border-bottom: 2px solid $gris-oscuro;
-                            }
+    .body-dark {
 
-                            .menu-creargifo-dark {
-                                border: 1px solid $blanco;
-                            }
+        header {
+            .navbar {
+                nav {
+                    .menu {
+                        ul {
+                            li {
+                                .menu-items {
+                                    color: $blanco;
+                                    border-bottom: 2px solid $gris-oscuro;
+                                }
 
-                            .menu-creargifo-dark:hover {
-                                background-color: $blanco;
-                            }
+                                .menu-items:hover {
+                                    border-bottom: 2px solid $turquesa;
+                                }
+                                
+                                .menu-creargifo {
+                                    border: 1px solid $blanco;
+                                }
 
-                            .menu-creargifo-dark:active {
-                                background-color: $blanco;
+                                .menu-creargifo:hover {
+                                    background-color: $blanco;
+                                }
+
+                                .menu-creargifo:active {
+                                    background-color: $blanco;
+                                }
                             }
                         }
-                    }
 
-                    .ul-dark {
-                        background-color: unset;
+                        ul {
+                            background-color: unset;
+                        }
                     }
                 }
             }
         }
     }
 }
-
-//menu desktop sticky
