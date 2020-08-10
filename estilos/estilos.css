@@ -1128,6 +1128,7 @@ footer .datos .footer-copyright p {
 #favoritos-vacio {
   text-align: center;
   margin-top: 40px;
+  display: none;
 }
 
 #favoritos-vacio img {
@@ -1237,17 +1238,8 @@ footer .datos .footer-copyright p {
     border: none;
   }
   .favorito {
-    cursor: pointer;
+    background-color: #ffffff;
     width: 18px;
-  }
-  .favorito .favorito-borrar {
-    display: none;
-  }
-  .favorito:hover .favorito-activo {
-    display: none;
-  }
-  .favorito:hover .favorito-borrar {
-    display: block;
   }
   .download {
     margin-left: 10px;

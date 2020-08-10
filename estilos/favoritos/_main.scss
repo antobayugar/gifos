@@ -17,6 +17,7 @@
 #favoritos-vacio {
     text-align: center;
     margin-top: 40px;
+    display: none;
 
     img {
         width: 120px;
@@ -121,21 +122,8 @@
     }
 
     .favorito {
-        cursor: pointer;
+        background-color: $blanco;
         width: 18px;
-
-        .favorito-borrar{
-            display: none;
-        }
-    }
-
-    .favorito:hover {
-        .favorito-activo {
-            display: none;
-        }
-        .favorito-borrar{
-            display: block;
-        }
     }
 
     .download {

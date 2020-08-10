@@ -109,7 +109,7 @@ function busquedaGifos() {
         .then(response => response.json())
         .then(content => {
             resultadosBusquedaGIFOS.innerHTML = "";
-            console.log(content.data);
+            //console.log(content.data);
             //aparece el div con el titulo y resultados
             let contenedorResultadosBusqueda = document.getElementById('resultados-busqueda-contenedor');
             contenedorResultadosBusqueda.style.display = "block";
@@ -146,13 +146,13 @@ function traerBusqueda(content) {
                 <div class="gif-acciones-resultados">
                     <div class="iconos-acciones-gif">
                         <button class="iconos-acciones-box favorito" onclick="agregarFavorito('${content.id}')">
-                            <img src="/assets/icon-fav-hover.svg" alt="icon-favorito" id="icon-fav-${content.id}">
+                            <img src="./assets/icon-fav-hover.svg" alt="icon-favorito" id="icon-fav-${content.id}">
                         </button>
-                        <button class="iconos-acciones-box download">
-                            <img src="/assets/icon-download.svg" alt="icon-dowlnoad">
+                        <button class="iconos-acciones-box download" onclick="descargarGif('${content.images.downsized.url}', '${content.slug}')">
+                            <img src="./assets/icon-download.svg" alt="icon-dowlnoad">
                         </button>
                         <button class="iconos-acciones-box max">
-                            <img src="/assets/icon-max.svg" alt="icon-max">
+                            <img src="./assets/icon-max.svg" alt="icon-max">
                         </button>
                     </div>
                     <div class="textos-descripcion-gif-resultados">
@@ -246,9 +246,14 @@ function trendingTopics() {
                     busquedaGifos();
                 })
             }
-
         })
         .catch(err => {
             console.log("error trending topics" + err);
         })
+}
+
+//FUNCION DESCARGAR GIF
+async function descargarGif(gifImg, gifNombre) {
+    let blob = await fetch(gifImg).then( img => img.blob());;
+    invokeSaveAsDialog(blob, gifNombre + ".gif");
 }
