@@ -1,8 +1,7 @@
 ////// API KEY: 
 apiKey = "QEiNwRIV3GcWQ83yvX6IVcIAST0hxr1n";
-offsetBusqueda = 0;
+//offsetBusqueda = 0;
 
-//let pantallaFavoritosVacio = document.getElementById('favoritos-vacio');
 let pantallaFavoritos = document.getElementById('resultados-favoritos');
 
 let favoritosArray = [];
@@ -48,9 +47,9 @@ function buscarFavoritos() {
 
     } else {
         favoritosArray = JSON.parse(favoritosString);
-        console.log(favoritosArray);
-        let urlFavoritos = `https://api.giphy.com/v1/gifs?ids=${favoritosArray.toString()}&api_key=${apiKey}&limit=12&offset=${offsetBusqueda}`;
-        console.log(urlFavoritos);
+        //console.log(favoritosArray);
+        let urlFavoritos = `https://api.giphy.com/v1/gifs?ids=${favoritosArray.toString()}&api_key=${apiKey}`;
+        //console.log(urlFavoritos);
 
         fetch(urlFavoritos)
             .then(response => response.json())

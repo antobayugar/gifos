@@ -143,7 +143,7 @@ function finalizarGifo() {
         form.append('api_key', apiKey);
     });
 
-    console.log(form.get('file'));
+    //console.log(form.get('file'));
 }
 
 
