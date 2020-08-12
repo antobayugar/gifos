@@ -9,7 +9,7 @@ let pantallaMisGifos = document.getElementById('resultados-misgifos');
 
 buscarMisGifos();
 
-//funciones para mostrar los favoritos en la pagina
+//funciones para mostrar mis gifos en la pagina
 function buscarMisGifos() {
     let pantallaMisGifosVacio = document.getElementById('misgifos-vacio');
 
@@ -21,20 +21,22 @@ function buscarMisGifos() {
     } else {
         misGifosArray = JSON.parse(misGifosString);
         let urlMisGifos = `https://api.giphy.com/v1/gifs?ids=${misGifosArray.toString()}&api_key=${apiKey}`;
-        console.log(urlMisGifos);
+        //console.log(urlMisGifos);
 
         fetch(urlMisGifos)
             .then(response => response.json())
+            
             .then(content => {
+                console.log(content);
                 mostrarMisGifos(content);
             })
             .catch(err => {
-                console.error('fetch favoritos fallo', err);
+                console.error('fetch mis gifos fallo', err);
             })
     }
 }
 
-async function mostrarMisGifos(content) {
+function mostrarMisGifos(content) {
     let gifosMisGifosArray = content.data;
 
     for(let i=0; i< gifosMisGifosArray.length; i++) {
