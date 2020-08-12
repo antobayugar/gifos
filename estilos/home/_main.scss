@@ -431,43 +431,9 @@
     }
 
     .gif-acciones-resultados {
-        position: absolute;
-        z-index: 0;
-        background-color: $violeta-op2;
         width: 260px;
         height: 200px;
     }
-
-    .textos-descripcion-gif-resultados {
-        position: absolute;
-        bottom: 30px;
-        left: 18px;
-    }
-
-    .user-gif-resultados {
-        @include textos-mobile;
-        text-align: left;
-        color: $blanco;
-        font-size: 15px;
-        line-height: 18px;
-        padding: 0;
-        margin-bottom: 6px;
-    }
-
-    .titulo-gif-resultados {
-        @include textos-mobile;
-        text-align: left;
-        color: $blanco;
-        font-size: 16px;
-        line-height: 19px;
-        font-weight: 500;
-        padding: 0;
-        margin: 0;
-    }
-
-    .resultados-gif-box:hover .gif-acciones-resultados {
-        display: block;
-    } 
 
     .busqueda-error-contenedor {
         margin-top: 50px;

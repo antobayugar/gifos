@@ -10,8 +10,6 @@ let favoritosString = localStorage.getItem("gifosFavoritos");
 
 function agregarFavorito(gif) {
 
-    //let favoritosString = localStorage.getItem("gifosFavoritos");
-
     //si en el local storage no hay nada, el array queda vacio
     if (favoritosString == null) {
         favoritosArray = [];
@@ -73,7 +71,7 @@ function mostrarFavoritos(content) {
         <div class="resultados-gif-box-fav">
         <div class="gif-acciones-resultados-fav">
             <div class="iconos-acciones-gif">
-                <button class="iconos-acciones-box favorito" >
+                <button class="iconos-acciones-box favorito-fav" >
                     <img src="./assets/icon-fav-active.svg" alt="icon-favorito" >
                 </button>
                 <button class="iconos-acciones-box download" onclick="descargarGif('${content.data[i].images.downsized.url}', '${content.data[i].slug}')">

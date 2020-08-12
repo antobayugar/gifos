@@ -29,7 +29,9 @@ function buscadorActivo() {
     btnCerrarBusqueda.style.display = "block";
 
     //agrego la funcion de traer sugerencias y reemplazarlas en los elementos
-    return fetch(`https://api.giphy.com/v1/tags/related/${busqueda}?api_key=${apiKey}&limit=4`)
+    
+    if (busqueda.length >= 1) {
+    fetch(`https://api.giphy.com/v1/tags/related/${busqueda}?api_key=${apiKey}&limit=4`)
         .then(response => response.json())
         .then(data => {
             sugerenciasData(data);
@@ -38,6 +40,7 @@ function buscadorActivo() {
         .catch(err => {
             console.error("error al traer sugerencias", err);
         })
+    }
 }
 
 let listaSugerencias = document.getElementById('buscador-sugerencias');

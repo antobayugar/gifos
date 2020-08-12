@@ -869,46 +869,8 @@ footer .datos .footer-copyright p {
     margin: 0 15px 31px 15px;
   }
   .gif-acciones-resultados {
-    position: absolute;
-    z-index: 0;
-    background-color: rgba(87, 46, 229, 0.6);
     width: 260px;
     height: 200px;
-  }
-  .textos-descripcion-gif-resultados {
-    position: absolute;
-    bottom: 30px;
-    left: 18px;
-  }
-  .user-gif-resultados {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 23px;
-    text-align: center;
-    text-align: left;
-    color: #ffffff;
-    font-size: 15px;
-    line-height: 18px;
-    padding: 0;
-    margin-bottom: 6px;
-  }
-  .titulo-gif-resultados {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 23px;
-    text-align: center;
-    text-align: left;
-    color: #ffffff;
-    font-size: 16px;
-    line-height: 19px;
-    font-weight: 500;
-    padding: 0;
-    margin: 0;
-  }
-  .resultados-gif-box:hover .gif-acciones-resultados {
-    display: block;
   }
   .busqueda-error-contenedor {
     margin-top: 50px;
@@ -1179,7 +1141,7 @@ footer .datos .footer-copyright p {
   display: none;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .header-favoritos {
     margin-top: 11px;
   }
@@ -1197,21 +1159,33 @@ footer .datos .footer-copyright p {
     font-size: 22px;
     line-height: 33px;
     margin-top: 24px;
-    padding: 0 520px;
+    padding: 0 52px;
   }
-  .resultados-busqueda {
-    margin: 59px 146px 47px 146px;
+  .resultados-favoritos {
+    margin: 38px 10px 53px 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .resultados-gif-box-fav {
-    width: 260px;
+    width: 220px;
     height: 200px;
-    margin: 0 15px 31px 15px;
+    margin: 0 10px 25px 10px;
   }
   .gif-acciones-resultados-fav {
     position: absolute;
     z-index: 0;
     background-color: rgba(87, 46, 229, 0.6);
-    width: 260px;
+    width: 220px;
     height: 200px;
   }
   .iconos-acciones-gif {
@@ -1237,9 +1211,8 @@ footer .datos .footer-copyright p {
     border-radius: 6px;
     border: none;
   }
-  .favorito {
+  .favorito-fav {
     background-color: #ffffff;
-    width: 18px;
   }
   .download {
     margin-left: 10px;
@@ -1288,33 +1261,23 @@ footer .datos .footer-copyright p {
   .resultados-gif-box-fav:hover .gif-acciones-resultados-fav {
     display: block;
   }
-  .user-gif {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 23px;
-    text-align: center;
-    text-align: left;
-    color: #ffffff;
-    font-size: 15px;
-    line-height: 18px;
-    font-weight: 300;
-    padding: 0;
-    margin-bottom: 6px;
+}
+
+@media screen and (min-width: 1440px) {
+  .resultados-favoritos {
+    margin: 59px 146px 47px 146px;
   }
-  .titulo-gif {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 23px;
-    text-align: center;
-    text-align: left;
-    color: #ffffff;
-    font-size: 16px;
-    line-height: 19px;
-    font-weight: 500;
-    padding: 0;
-    margin: 0;
+  .resultados-gif-box-fav {
+    width: 260px;
+    height: 200px;
+    margin: 0 15px 31px 15px;
+  }
+  .gif-acciones-resultados-fav {
+    position: absolute;
+    z-index: 0;
+    background-color: rgba(87, 46, 229, 0.6);
+    width: 260px;
+    height: 200px;
   }
 }
 
@@ -1340,6 +1303,7 @@ footer .datos .footer-copyright p {
 #misgifos-vacio {
   text-align: center;
   margin-top: 40px;
+  display: none;
 }
 
 #misgifos-vacio img {
@@ -1390,7 +1354,7 @@ footer .datos .footer-copyright p {
   display: none;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .header-misgifos {
     margin-top: 11px;
   }
@@ -1411,18 +1375,30 @@ footer .datos .footer-copyright p {
     padding: 0 520px;
   }
   .resultados-misgifos {
-    margin: 59px 146px 47px 146px;
+    margin: 38px 10px 53px 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .resultados-gif-box-misgifos {
-    width: 260px;
+    width: 220px;
     height: 200px;
-    margin: 0 15px 31px 15px;
+    margin: 0 10px 25px 10px;
   }
   .gif-acciones-resultados-misgifos {
     position: absolute;
     z-index: 0;
     background-color: rgba(87, 46, 229, 0.6);
-    width: 260px;
+    width: 220px;
     height: 200px;
   }
   .iconos-acciones-gif {
@@ -1498,37 +1474,27 @@ footer .datos .footer-copyright p {
   .resultados-gif-box-misgifos:hover .gif-acciones-resultados-misgifos {
     display: block;
   }
-  .user-gif {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 23px;
-    text-align: center;
-    text-align: left;
-    color: #ffffff;
-    font-size: 15px;
-    line-height: 18px;
-    font-weight: 300;
-    padding: 0;
-    margin-bottom: 6px;
-  }
-  .titulo-gif {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 23px;
-    text-align: center;
-    text-align: left;
-    color: #ffffff;
-    font-size: 16px;
-    line-height: 19px;
-    font-weight: 500;
-    padding: 0;
-    margin: 0;
-  }
 }
 
 @media screen and (min-width: 1440px) {
+  .resultados-misgifos {
+    margin: 59px 146px 47px 146px;
+  }
+  .resultados-gif-box-misgifos {
+    width: 260px;
+    height: 200px;
+    margin: 0 15px 31px 15px;
+  }
+  .gif-acciones-resultados-misgifos {
+    position: absolute;
+    z-index: 0;
+    background-color: rgba(87, 46, 229, 0.6);
+    width: 260px;
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .main-creargifo {
     text-align: center;
   }
@@ -1630,6 +1596,7 @@ footer .datos .footer-copyright p {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    position: relative;
   }
   .main-creargifo .ilus-grabar-contenedor .div-grabacion .recuadro-grabacion .video-contenedor #titulo-grabargifo {
     font-family: 'Montserrat', sans-serif;
@@ -1660,26 +1627,34 @@ footer .datos .footer-copyright p {
     height: 100%;
     background-color: rgba(87, 46, 229, 0.6);
     text-align: center;
-    position: relative;
+    position: absolute;
+    z-index: 5;
   }
   .main-creargifo .ilus-grabar-contenedor .div-grabacion .recuadro-grabacion .video-contenedor .overlay-video #overlay-video-actions {
+    display: none;
     position: absolute;
     top: 12px;
     right: 12px;
   }
   .main-creargifo .ilus-grabar-contenedor .div-grabacion .recuadro-grabacion .video-contenedor .overlay-video #overlay-video-actions #btn-creargifo-descargar {
+    position: absolute;
+    top: 0;
+    right: 42px;
     width: 32px;
     height: 32px;
     border-radius: 6px;
     border: none;
     background-color: rgba(255, 255, 255, 0.7);
-    margin: 0 10px 0 0;
+    margin: 0;
     cursor: pointer;
   }
   .main-creargifo .ilus-grabar-contenedor .div-grabacion .recuadro-grabacion .video-contenedor .overlay-video #overlay-video-actions #btn-creargifo-descargar:hover {
     background-color: #ffffff;
   }
   .main-creargifo .ilus-grabar-contenedor .div-grabacion .recuadro-grabacion .video-contenedor .overlay-video #overlay-video-actions #btn-creargifo-link {
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 32px;
     height: 32px;
     border-radius: 6px;
@@ -1713,11 +1688,15 @@ footer .datos .footer-copyright p {
   }
   .main-creargifo .ilus-grabar-contenedor .div-grabacion .recuadro-grabacion .video-contenedor #grabacion-video {
     display: none;
+    position: absolute;
+    z-index: 1;
   }
   .main-creargifo .ilus-grabar-contenedor .div-grabacion .recuadro-grabacion .video-contenedor #gif-grabado {
     display: none;
     width: 480px;
     height: 320px;
+    position: absolute;
+    z-index: 2;
   }
   .main-creargifo .ilus-grabar-contenedor .div-grabacion div {
     height: 75px;

@@ -1,4 +1,4 @@
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
     
 
     .main-creargifo {
@@ -86,6 +86,7 @@
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
+                        position: relative;
 
                         #titulo-grabargifo {
                             //display: none;
@@ -114,20 +115,25 @@
                             height: 100%;
                             background-color: $violeta-op2;
                             text-align: center;
-                            position: relative;
+                            position: absolute;
+                            z-index: 5;
 
                             #overlay-video-actions {
+                                display: none;
                                 position: absolute;
                                 top: 12px;
                                 right: 12px;
 
                                 #btn-creargifo-descargar {
+                                    position: absolute;
+                                    top: 0;
+                                    right: 42px;
                                     width: 32px;
                                     height: 32px;
                                     border-radius: 6px;
                                     border: none;
                                     background-color: $blanco-op;
-                                    margin: 0 10px 0 0;
+                                    margin: 0;
                                     cursor: pointer;
                                 }
 
@@ -136,6 +142,9 @@
                                 }
 
                                 #btn-creargifo-link {
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
                                     width: 32px;
                                     height: 32px;
                                     border-radius: 6px;
@@ -171,12 +180,16 @@
 
                         #grabacion-video {
                             display: none;
+                            position: absolute;
+                            z-index: 1;
                         }
 
                         #gif-grabado {
                             display: none;
                             width: 480px;
                             height: 320px;
+                            position: absolute;
+                            z-index: 2;
                         }
                     }
                 }
