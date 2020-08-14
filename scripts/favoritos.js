@@ -78,13 +78,13 @@ async function descargarGif(gifImg, gifNombre) {
     invokeSaveAsDialog(blob, gifNombre + ".gif");
 }
 
-//FUNCION MAXIMIZAR GIF
+//FUNCION MAXIMIZAR GIF mobile
 function maxGifMobileFav(img, id, slug, user, title) {
     if (window.matchMedia("(max-width: 1023px)").matches) {
         modalMobileFav.style.display = "block";
         modalMobileFav.innerHTML = `
     <button class="modal-btn-close" onclick="cerrarModalMobileFav()"><img src="./assets/button-close.svg" alt=""></button>
-    <img src="${img}" alt="" class="modal-gif">
+    <img src="${img}" alt="${id}" class="modal-gif">
 
     <div class="modal-bar">
         <div class="modal-textos">
@@ -113,7 +113,7 @@ function maxGifDesktopFav(img, id, slug, user, title){
         modalDesktopFav.style.display = "block";
         modalDesktopFav.innerHTML = `
     <button class="modal-btn-close" onclick="cerrarModalDesktopFav()"><img src="./assets/button-close.svg" alt=""></button>
-    <img src="${img}" alt="" class="modal-gif">
+    <img src="${img}" alt="${id}" class="modal-gif">
 
     <div class="modal-bar">
         <div class="modal-textos">

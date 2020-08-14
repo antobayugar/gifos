@@ -283,19 +283,19 @@ function agregarFavorito(gif) {
 
 
 //DESCARGAR GIF
-function descargarGif(gifImg, gifNombre) {
-    let blob = fetch(gifImg).then(img => img.blob());;
+async function descargarGif(gifImg, gifNombre) {
+    let blob = await fetch(gifImg).then(img => img.blob());;
     invokeSaveAsDialog(blob, gifNombre + ".gif");
 }
 
 
-//MAXIMIZAR GIF MOBILE
+//MAXIMIZAR GIF MOBILE mobile
 function maxGifMobile(img, id, slug, user, title) {
     if (window.matchMedia("(max-width: 1023px)").matches) {
         modalMobile.style.display = "block";
         modalMobile.innerHTML = `
     <button class="modal-btn-close" onclick="cerrarModalMobile()"><img src="./assets/button-close.svg" alt=""></button>
-    <img src="${img}" alt="" class="modal-gif">
+    <img src="${img}" alt="${id}" class="modal-gif">
 
     <div class="modal-bar">
         <div class="modal-textos">
@@ -324,7 +324,7 @@ function maxGifDesktop(img, id, slug, user, title){
         modalDesktop.style.display = "block";
         modalDesktop.innerHTML = `
     <button class="modal-btn-close" onclick="cerrarModalDesktop()"><img src="./assets/button-close.svg" alt=""></button>
-    <img src="${img}" alt="" class="modal-gif">
+    <img src="${img}" alt="${id}" class="modal-gif">
 
     <div class="modal-bar">
         <div class="modal-textos">
