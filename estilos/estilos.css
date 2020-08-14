@@ -714,6 +714,70 @@ footer .datos .footer-copyright p {
   line-height: 28px;
 }
 
+.modal-activado {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: fixed;
+  padding: 0 30px;
+  z-index: 9;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+
+.modal-activado .modal-btn-close {
+  background-color: unset;
+  border: 0;
+  position: absolute;
+  top: 10vh;
+  right: 30px;
+}
+
+.modal-activado .modal-gif {
+  width: 100%;
+  margin-top: 25vh;
+}
+
+.modal-activado .modal-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 17px;
+}
+
+.modal-activado .modal-bar .modal-textos {
+  margin: 0;
+  padding: 0;
+}
+
+.modal-activado .modal-bar .modal-textos .modal-user {
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 300;
+  margin: 0;
+  color: #000000;
+}
+
+.modal-activado .modal-bar .modal-textos .modal-titulo {
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 500;
+  margin-top: 6px;
+  color: #000000;
+}
+
+.modal-activado .modal-bar .modal-btn {
+  background-color: unset;
+  border: 0;
+  width: 36px;
+  height: 36px;
+}
+
 @media screen and (min-width: 1024px) {
   .main-header h1 {
     padding-top: 76px;

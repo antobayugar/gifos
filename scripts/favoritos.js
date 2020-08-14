@@ -1,33 +1,10 @@
 ////// API KEY: 
 apiKey = "QEiNwRIV3GcWQ83yvX6IVcIAST0hxr1n";
-//offsetBusqueda = 0;
 
 let pantallaFavoritos = document.getElementById('resultados-favoritos');
 
 let favoritosArray = [];
 let favoritosString = localStorage.getItem("gifosFavoritos");
-
-function agregarFavorito(gif) {
-
-    //si en el local storage no hay nada, el array queda vacio
-    if (favoritosString == null) {
-        favoritosArray = [];
-
-    } else {
-        //si tengo contenido, necesito parsearlo para poder agregar uno nuevo independiente
-        favoritosArray = JSON.parse(favoritosString);
-    }
-
-    favoritosArray.push(gif);
-    //vuelvo a pasar a texto el array para subirlo al localStorage
-    favoritosString = JSON.stringify(favoritosArray);
-    localStorage.setItem("gifosFavoritos", favoritosString);
-
-    //cambio el icono del corazon
-    let iconFav = document.getElementById('icon-fav-' + gif);
-    iconFav.setAttribute("src", "./assets/icon-fav-active.svg");
-}
-
 
 let urlActual = window.location.pathname;
 if (urlActual ==="/favoritos.html") {
@@ -90,8 +67,6 @@ function mostrarFavoritos(content) {
         `;
     }
 }
-
-
 
 
 //FUNCION DESCARGAR GIF
