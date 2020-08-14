@@ -1,13 +1,13 @@
 ////// API KEY: 
 let apiKey = "QEiNwRIV3GcWQ83yvX6IVcIAST0hxr1n";
 
-// BUSCADOR
-//traigo los elementos a usar del html
+//traigo los elementos a usar
 let inputBuscador = document.getElementById('input-buscador');
 let bloqueBuscador = document.getElementById('buscador');
 let iconBuscar = document.getElementById('buscador-lupa');
 let btnBuscar = document.getElementById('buscador-lupa-gris');
 let btnCerrarBusqueda = document.getElementById('cerrar-busqueda');
+let listaSugerencias = document.getElementById('buscador-sugerencias');
 
 let offsetBusqueda = 0;
 let resultadosBusquedaGIFOS = document.getElementById('resultados-busqueda');
@@ -16,10 +16,9 @@ let btnVerMasResultados = document.getElementById('resultados-vermas');
 let busqueda;
 
 let modalMobile = document.createElement("div");
-let gifIdMax;
-//onclick="maxGifMobile('${content.images.downsized.url}', '${content.id}', '${content.slug}', '${content.username}', '${content.title}')"
+let modalDesktop = document.createElement("div");
 
-
+// BUSCADOR
 // cuando se agranda el div y se muestran sugerencias:
 inputBuscador.addEventListener('keyup', buscadorActivo);
 
@@ -33,21 +32,22 @@ function buscadorActivo() {
     btnCerrarBusqueda.style.display = "block";
 
     //agrego la funcion de traer sugerencias y reemplazarlas en los elementos
-
     if (busqueda.length >= 1) {
         fetch(`https://api.giphy.com/v1/tags/related/${busqueda}?api_key=${apiKey}&limit=4`)
             .then(response => response.json())
             .then(data => {
                 sugerenciasData(data);
-                //console.log(data);
             })
             .catch(err => {
-                console.error("error al traer sugerencias", err);
+                console.error("error al traer sugerencias de busqueda", err);
             })
+    } else {
+        //funcion para cerrar el buscador cuando se borra todo
+        cerrarBoxBusqueda();
     }
 }
 
-let listaSugerencias = document.getElementById('buscador-sugerencias');
+
 
 function sugerenciasData(data) {
     let sugerencia = data.data;
@@ -91,8 +91,6 @@ function limpiarBusqueda() {
     bloqueBuscador.classList.remove('buscador-activo');
     iconBuscar.style.display = "block";
     btnCerrarBusqueda.style.display = "none";
-
-    //faltaria agregar que se cierre cuando se borra todo
 }
 
 //hago la busqueda al clickear lupa gris, o apretar enter
@@ -158,7 +156,7 @@ function traerBusqueda(content) {
                         <button class="iconos-acciones-box download" onclick="descargarGif('${content.images.downsized.url}', '${content.slug}')">
                             <img src="./assets/icon-download.svg" alt="icon-dowlnoad">
                         </button>
-                        <button class="iconos-acciones-box max" >
+                        <button class="iconos-acciones-box max" onclick="maxGifDesktop('${content.images.downsized.url}', '${content.id}', '${content.slug}', '${content.username}', '${content.title}')">
                             <img src="./assets/icon-max.svg" alt="icon-max">
                         </button>
                     </div>
@@ -196,7 +194,6 @@ function busquedaGifosVerMas() {
     let urlBusqueda = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&limit=12&offset=${offsetBusqueda}&q=`;
     let strBusqueda = inputBuscador.value.trim();
     urlBusqueda = urlBusqueda.concat(strBusqueda);
-    //console.log(urlBusqueda);
 
     fetch(urlBusqueda)
         .then(response => response.json())
@@ -260,10 +257,10 @@ function trendingTopics() {
 }
 
 
-//FUNCIONES TARJETAS
+//FUNCIONES ACCIONES GIF:
 
 //FAVORITOS
-async function agregarFavorito(gif) {
+function agregarFavorito(gif) {
 
     //si en el local storage no hay nada, el array queda vacio
     if (favoritosString == null) {
@@ -284,57 +281,16 @@ async function agregarFavorito(gif) {
     iconFav.setAttribute("src", "./assets/icon-fav-active.svg");
 }
 
+
 //DESCARGAR GIF
-async function descargarGif(gifImg, gifNombre) {
-    let blob = await fetch(gifImg).then(img => img.blob());;
+function descargarGif(gifImg, gifNombre) {
+    let blob = fetch(gifImg).then(img => img.blob());;
     invokeSaveAsDialog(blob, gifNombre + ".gif");
 }
 
-//MAXIMIZAR GIF
 
-/* if (window.matchMedia("(max-width: 1024px)").matches) {
-    resultadosBusquedaGIFOS.addEventListener("click", function (e) {
-        gifIdMax = e.target.alt;
-        if (gifIdMax != undefined) {
-            traerIdGif(gifIdMax);
-            console.log(gifIdMax);
-        }
-    })
-} */
-
-/* async function traerIdGif(id) {
-    let urlId = `https://api.giphy.com/v1/gifs?ids=${id}&api_key=${apiKey}`;
-    //console.log(urlId);
-    fetch(urlId)
-        .then(response => response.json())
-        .then(content => {
-            //console.log(content.data[0].id);
-            modalMobile.style.display = "block";
-            modalMobile.innerHTML = `
-    <button class="modal-btn-close" onclick="cerrarModalMobile()"><img src="./assets/button-close.svg" alt=""></button>
-    <img src="${content.data[0].images.downsized.url}" alt="" class="modal-gif">
-
-    <div class="modal-bar">
-        <div class="modal-textos">
-            <p class="modal-user">${content.data[0].user}</p>
-            <p class="modal-titulo">${content.data[0].title}</p>
-        </div>
-        <div>
-            <button class="modal-btn" onclick="agregarFavorito('${content.data[0].id}')"><img src="./assets/icon-fav-hover.svg" alt="fav-gif"></button>
-            <button class="modal-btn" onclick="descargarGif('${content.data[0].images.downsized.url}', '${content.data[0].slug}')"><img src="./assets/icon-download.svg" alt="download-gif"></button>
-        </div>
-    </div>
-    `;
-            modalMobile.classList.add("modal-activado");
-            document.body.appendChild(modalMobile); 
-
-        })
-} */
-
-
-
-async function maxGifMobile(img, id, slug, user, title) {
-    //console.log("max mobile");
+//MAXIMIZAR GIF MOBILE
+function maxGifMobile(img, id, slug, user, title) {
     if (window.matchMedia("(max-width: 1023px)").matches) {
         modalMobile.style.display = "block";
         modalMobile.innerHTML = `
@@ -347,7 +303,7 @@ async function maxGifMobile(img, id, slug, user, title) {
             <p class="modal-titulo">${title}</p>
         </div>
         <div>
-            <button class="modal-btn" onclick="agregarFavorito('${id}')"><img src="./assets/icon-fav-hover.svg" alt="fav-gif"></button>
+            <button class="modal-btn" onclick="agregarFavorito('${id}')"><img src="./assets/icon-fav-hover.svg" alt="fav-gif" id="icon-fav-${id}"></button>
             <button class="modal-btn" onclick="descargarGif('${img}', '${slug}')"><img src="./assets/icon-download.svg" alt="download-gif"></button>
         </div>
     </div>
@@ -357,7 +313,35 @@ async function maxGifMobile(img, id, slug, user, title) {
     }
 }
 
-async function cerrarModalMobile() {
-    //debugger;
+function cerrarModalMobile() {
     modalMobile.style.display = "none";
+} 
+
+
+//MAXIMIZAR GIF DESKTOP
+function maxGifDesktop(img, id, slug, user, title){
+    if (window.matchMedia("(min-width: 1023px)").matches){
+        modalDesktop.style.display = "block";
+        modalDesktop.innerHTML = `
+    <button class="modal-btn-close" onclick="cerrarModalDesktop()"><img src="./assets/button-close.svg" alt=""></button>
+    <img src="${img}" alt="" class="modal-gif">
+
+    <div class="modal-bar">
+        <div class="modal-textos">
+            <p class="modal-user">${user}</p>
+            <p class="modal-titulo">${title}</p>
+        </div>
+        <div>
+            <button class="modal-btn" onclick="agregarFavorito('${id}')"><img src="./assets/icon-fav-hover.svg" alt="fav-gif" id="icon-fav-${id}"></button>
+            <button class="modal-btn" onclick="descargarGif('${img}', '${slug}')"><img src="./assets/icon-download.svg" alt="download-gif"></button>
+        </div>
+    </div>
+    `;
+    modalDesktop.classList.add("modal-activado");
+        document.body.appendChild(modalDesktop);
+    }
+}
+
+function cerrarModalDesktop() {
+    modalDesktop.style.display = "none";
 } 

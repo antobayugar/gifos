@@ -6,6 +6,9 @@ let pantallaFavoritos = document.getElementById('resultados-favoritos');
 let favoritosArray = [];
 let favoritosString = localStorage.getItem("gifosFavoritos");
 
+let modalMobileFav = document.createElement("div");
+let modalDesktopFav = document.createElement("div");
+
 let urlActual = window.location.pathname;
 if (urlActual ==="/favoritos.html") {
     //solo corre la funcion si estoy en la pagina de favoritos
@@ -44,7 +47,7 @@ function mostrarFavoritos(content) {
 
     for(let i=0; i< gifosFavoritosArray.length; i++) {
         pantallaFavoritos.innerHTML += `
-        <div class="resultados-gif-box-fav">
+        <div class="resultados-gif-box-fav" onclick="maxGifMobileFav('${content.data[i].images.downsized.url}', '${content.data[i].id}', '${content.data[i].slug}', '${content.data[i].username}', '${content.data[i].title}')">
         <div class="gif-acciones-resultados-fav">
             <div class="iconos-acciones-gif">
                 <button class="iconos-acciones-box favorito-fav" >
@@ -53,7 +56,7 @@ function mostrarFavoritos(content) {
                 <button class="iconos-acciones-box download" onclick="descargarGif('${content.data[i].images.downsized.url}', '${content.data[i].slug}')">
                     <img src="./assets/icon-download.svg" alt="icon-dowlnoad">
                 </button>
-                <button class="iconos-acciones-box max">
+                <button class="iconos-acciones-box max" onclick="maxGifDesktopFav('${content.data[i].images.downsized.url}', '${content.data[i].id}', '${content.data[i].slug}', '${content.data[i].username}', '${content.data[i].title}')">
                     <img src="./assets/icon-max.svg" alt="icon-max">
                 </button>
             </div>
@@ -74,3 +77,60 @@ async function descargarGif(gifImg, gifNombre) {
     let blob = await fetch(gifImg).then( img => img.blob());;
     invokeSaveAsDialog(blob, gifNombre + ".gif");
 }
+
+//FUNCION MAXIMIZAR GIF
+function maxGifMobileFav(img, id, slug, user, title) {
+    if (window.matchMedia("(max-width: 1023px)").matches) {
+        modalMobileFav.style.display = "block";
+        modalMobileFav.innerHTML = `
+    <button class="modal-btn-close" onclick="cerrarModalMobileFav()"><img src="./assets/button-close.svg" alt=""></button>
+    <img src="${img}" alt="" class="modal-gif">
+
+    <div class="modal-bar">
+        <div class="modal-textos">
+            <p class="modal-user">${user}</p>
+            <p class="modal-titulo">${title}</p>
+        </div>
+        <div>
+            <button class="modal-btn"><img src="./assets/icon-fav-active.svg" alt="fav-gif" id="icon-fav-${id}"></button>
+            <button class="modal-btn" onclick="descargarGif('${img}', '${slug}')"><img src="./assets/icon-download.svg" alt="download-gif"></button>
+        </div>
+    </div>
+    `;
+        modalMobileFav.classList.add("modal-activado");
+        document.body.appendChild(modalMobileFav);
+    }
+}
+
+function cerrarModalMobileFav() {
+    modalMobileFav.style.display = "none";
+} 
+
+
+//MAXIMIZAR GIF DESKTOP
+function maxGifDesktopFav(img, id, slug, user, title){
+    if (window.matchMedia("(min-width: 1023px)").matches){
+        modalDesktopFav.style.display = "block";
+        modalDesktopFav.innerHTML = `
+    <button class="modal-btn-close" onclick="cerrarModalDesktopFav()"><img src="./assets/button-close.svg" alt=""></button>
+    <img src="${img}" alt="" class="modal-gif">
+
+    <div class="modal-bar">
+        <div class="modal-textos">
+            <p class="modal-user">${user}</p>
+            <p class="modal-titulo">${title}</p>
+        </div>
+        <div>
+            <button class="modal-btn" onclick="agregarFavorito('${id}')"><img src="./assets/icon-fav-hover.svg" alt="fav-gif" id="icon-fav-${id}"></button>
+            <button class="modal-btn" onclick="descargarGif('${img}', '${slug}')"><img src="./assets/icon-download.svg" alt="download-gif"></button>
+        </div>
+    </div>
+    `;
+    modalDesktopFav.classList.add("modal-activado");
+        document.body.appendChild(modalDesktopFav);
+    }
+}
+
+function cerrarModalDesktopFav() {
+    modalDesktopFav.style.display = "none";
+} 
