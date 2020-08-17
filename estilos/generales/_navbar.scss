@@ -16,7 +16,6 @@ header {
         display: flex;
         justify-content: space-between;
         height: 95px;
-        //background-color: $blanco;
         padding: 29px 26px 17px 22px;
 
         #logo {
@@ -147,6 +146,8 @@ header {
         .navbar {
             height: 90px;
             padding-top: 18px;
+            padding-left: 50px;
+            padding-right: 50px;
 
             #logo {
                 display: none;
@@ -261,16 +262,7 @@ header {
     }
 }
 
-@media screen and (min-width: 1000px) {
-    header {
-        .navbar {
-            padding-left: 50px;
-            padding-right: 50px;
-        }
-    }
-}
-
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1440px) {
     header {
         .navbar {
             padding-left: 156px;
@@ -278,5 +270,3 @@ header {
         }
     }
 }
-
-//menu desktop sticky

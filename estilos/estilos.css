@@ -163,6 +163,8 @@ header .navbar nav .menu input:checked ~ label .span3 {
   header .navbar {
     height: 90px;
     padding-top: 18px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
   header .navbar #logo {
     display: none;
@@ -265,14 +267,7 @@ header .navbar nav .menu input:checked ~ label .span3 {
   }
 }
 
-@media screen and (min-width: 1000px) {
-  header .navbar {
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-}
-
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1440px) {
   header .navbar {
     padding-left: 156px;
     padding-right: 156px;
@@ -353,7 +348,7 @@ footer .datos .footer-copyright p {
   line-height: 20px;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   footer .datos {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -361,7 +356,7 @@ footer .datos .footer-copyright p {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    margin: 47px 156px 48px;
+    margin: 47px 50px 48px;
   }
   footer .datos .footer-redes {
     margin-top: 0;
@@ -408,6 +403,12 @@ footer .datos .footer-copyright p {
   }
   footer .datos .footer-copyright p {
     font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  footer .datos {
+    margin: 47px 156px 48px;
   }
 }
 
@@ -1588,21 +1589,47 @@ footer .datos .footer-copyright p {
   }
 }
 
+.main-mobile {
+  margin: 20px auto;
+}
+
+.main-mobile h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  text-align: center;
+  color: #572EE5;
+  font-size: 20px;
+  line-height: 25px;
+  padding: 0 25px;
+}
+
+.main-mobile h2 .gifos-turquesa {
+  color: #50E3C2;
+}
+
+.main-creargifo {
+  display: none;
+}
+
 @media screen and (min-width: 1024px) {
+  .main-mobile {
+    display: none;
+  }
   .main-creargifo {
     text-align: center;
+    display: block;
   }
   .main-creargifo .ilus-grabar-contenedor {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin: 4px 156px 0px 156px;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    margin: 4px 50px 0px 50px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .main-creargifo .ilus-grabar-contenedor .div-camara {
-    width: 220px;
+    width: 162px;
     height: 390px;
     margin: 0;
     display: -webkit-box;
@@ -1616,15 +1643,15 @@ footer .datos .footer-copyright p {
             justify-content: flex-start;
   }
   .main-creargifo .ilus-grabar-contenedor .div-camara #camara-ilustracion {
-    width: 123px;
+    width: 90px;
   }
   .main-creargifo .ilus-grabar-contenedor .div-camara #luz-camara {
-    width: 91px;
+    width: 60px;
     padding-top: 5px;
-    padding-left: 5px;
+    padding-left: 3px;
   }
   .main-creargifo .ilus-grabar-contenedor .div-grabacion .recuadro-grabacion {
-    width: 688px;
+    width: 600px;
     height: 390px;
     border: 1px solid #572EE5;
     position: relative;
@@ -1862,19 +1889,19 @@ footer .datos .footer-copyright p {
     border-bottom: 2px solid #50E3C2;
   }
   .main-creargifo .ilus-grabar-contenedor .div-pelicula {
-    width: 220px;
+    width: 162px;
     height: 465px;
     position: relative;
   }
   .main-creargifo .ilus-grabar-contenedor .div-pelicula img {
-    width: 142px;
+    width: 100px;
     position: absolute;
     bottom: 0;
     right: 15px;
   }
   .main-creargifo .divisor-creargifo {
     height: 7px;
-    width: 795px;
+    width: 650px;
     border-radius: 50px;
     background-color: #572EE5;
     margin: 0 auto 20px;
@@ -1900,6 +1927,38 @@ footer .datos .footer-copyright p {
     display: none;
     font-weight: 600;
     margin: 0 auto 26px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .main-creargifo .ilus-grabar-contenedor {
+    margin: 4px 156px 0px 156px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .main-creargifo .ilus-grabar-contenedor .div-camara {
+    width: 220px;
+  }
+  .main-creargifo .ilus-grabar-contenedor .div-camara #camara-ilustracion {
+    width: 123px;
+  }
+  .main-creargifo .ilus-grabar-contenedor .div-camara #luz-camara {
+    width: 91px;
+    padding-left: 5px;
+  }
+  .main-creargifo .ilus-grabar-contenedor .div-grabacion .recuadro-grabacion {
+    width: 688px;
+  }
+  .main-creargifo .ilus-grabar-contenedor .div-pelicula {
+    width: 220px;
+  }
+  .main-creargifo .ilus-grabar-contenedor .div-pelicula img {
+    width: 142px;
+  }
+  .main-creargifo .divisor-creargifo {
+    width: 795px;
+    /*  */
   }
 }
 

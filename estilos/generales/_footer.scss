@@ -56,12 +56,13 @@ footer {
     }
 }
 
-@media screen and (min-width: 1440px) {
+
+@media screen and (min-width: 1024px) {
     footer {
         .datos {
             display: flex;
             justify-content: space-between;
-            margin: 47px 156px 48px;
+            margin: 47px 50px 48px;
 
             .footer-redes {
                 margin-top: 0;
@@ -113,6 +114,15 @@ footer {
                     
                 }
             }
+        }
+    }
+}
+
+
+@media screen and (min-width: 1440px) {
+    footer {
+        .datos {
+            margin: 47px 156px 48px;
         }
     }
 }

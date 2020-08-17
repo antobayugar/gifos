@@ -1,17 +1,38 @@
+.main-mobile {
+    margin: 20px auto;
+    h2 {
+        @include titulos;
+        font-size: 20px;
+        line-height: 25px;
+        padding: 0 25px;
+
+        .gifos-turquesa {
+            color: $turquesa;
+        }
+    }
+}
+
+.main-creargifo {
+    display: none;
+}
+
 @media screen and (min-width: 1024px) {
-    
+    .main-mobile {
+        display: none;
+    }
 
     .main-creargifo {
         text-align: center;
+        display: block;
 
         .ilus-grabar-contenedor {
             display: flex;
-            margin: 4px 156px 0px 156px;
+            margin: 4px 50px 0px 50px;
 
-            justify-content: space-between;
+            justify-content: center;
 
             .div-camara {
-                width: 220px;
+                width: 162px;
                 height: 390px;
                 margin: 0;
                 display: flex;
@@ -19,19 +40,19 @@
                 justify-content: flex-start;
 
                 #camara-ilustracion {
-                    width: 123px;
+                    width: 90px;
                 }
 
                 #luz-camara {
-                    width: 91px;
+                    width: 60px;
                     padding-top: 5px;
-                    padding-left: 5px;
+                    padding-left: 3px;
                 }
             }
 
             .div-grabacion {
                 .recuadro-grabacion {
-                    width: 688px;
+                    width: 600px;
                     height: 390px;
                     border: 1px solid $violeta;
                     position: relative;
@@ -101,7 +122,6 @@
                         }
 
                         #texto-grabargifo {
-                            //display: none;
                             @include textos-mobile;
                             color: $negro;
                             font-size: 16px;
@@ -260,12 +280,12 @@
             }
 
             .div-pelicula {
-                width: 220px;
+                width: 162px;
                 height: 465px;
                 position: relative;
 
                 img {
-                    width: 142px;
+                    width: 100px;
                     position: absolute;
                     bottom: 0;
                     right: 15px;
@@ -275,7 +295,7 @@
 
         .divisor-creargifo {
             height: 7px;
-            width: 795px;
+            width: 650px;
             border-radius: 50px;
             background-color: $violeta;
             margin: 0 auto 20px;
@@ -306,6 +326,48 @@
                 font-weight: 600;
                 margin: 0 auto 26px;
             }
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .main-creargifo {
+        .ilus-grabar-contenedor {
+            margin: 4px 156px 0px 156px;
+            justify-content: space-between;
+
+            .div-camara {
+                width: 220px;
+
+                #camara-ilustracion {
+                    width: 123px;
+                }
+
+                #luz-camara {
+                    width: 91px;
+                    padding-left: 5px;
+                }
+            }
+
+            .div-grabacion {
+                .recuadro-grabacion {
+                    width: 688px;
+                }
+            }
+
+            .div-pelicula {
+                width: 220px;
+                
+
+                img {
+                    width: 142px;
+                    
+                }
+            }
+        }
+
+        .divisor-creargifo {   
+            width: 795px;/*  */
         }
     }
 }
