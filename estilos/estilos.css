@@ -454,6 +454,7 @@ footer .datos .footer-copyright p {
 }
 
 .modal-activado .modal-bar .modal-textos .modal-user {
+  text-align: left;
   font-size: 15px;
   line-height: 18px;
   font-weight: 300;
@@ -463,6 +464,7 @@ footer .datos .footer-copyright p {
 }
 
 .modal-activado .modal-bar .modal-textos .modal-titulo {
+  text-align: left;
   font-size: 16px;
   line-height: 19px;
   font-weight: 500;
@@ -1307,7 +1309,7 @@ footer .datos .footer-copyright p {
     border: none;
   }
   .favorito-fav {
-    background-color: #ffffff;
+    cursor: pointer;
   }
   .download {
     margin-left: 10px;

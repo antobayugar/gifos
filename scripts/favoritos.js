@@ -18,18 +18,16 @@ if (urlActual ==="/favoritos.html") {
 //funciones para mostrar los favoritos en la pagina
 function buscarFavoritos() {
     let pantallaFavoritosVacio = document.getElementById('favoritos-vacio');
-    //let pantallaFavoritos = document.getElementById('gifos-favoritos');
 
-    if (favoritosString == null) {
+    if (favoritosString == null || favoritosString == "[]") {
         //1. si no tengo favoritos, muestro la pantalla favoritos vacia
         pantallaFavoritosVacio.style.display = "block";
         pantallaFavoritos.style.display = "none";
 
     } else {
         favoritosArray = JSON.parse(favoritosString);
-        //console.log(favoritosArray);
+        console.log(favoritosArray);
         let urlFavoritos = `https://api.giphy.com/v1/gifs?ids=${favoritosArray.toString()}&api_key=${apiKey}`;
-        //console.log(urlFavoritos);
 
         fetch(urlFavoritos)
             .then(response => response.json())
@@ -50,8 +48,8 @@ function mostrarFavoritos(content) {
         <div class="resultados-gif-box-fav" onclick="maxGifMobileFav('${content.data[i].images.downsized.url}', '${content.data[i].id}', '${content.data[i].slug}', '${content.data[i].username}', '${content.data[i].title}')">
         <div class="gif-acciones-resultados-fav">
             <div class="iconos-acciones-gif">
-                <button class="iconos-acciones-box favorito-fav" >
-                    <img src="./assets/icon-fav-active.svg" alt="icon-favorito" >
+                <button class="iconos-acciones-box favorito-fav" onclick="borrarFav('${content.data[i].id}')">
+                    <img src="./assets/icon-fav-active.svg" alt="icon-favorito" id="icon-borrar-fav-${content.data[i].id}">
                 </button>
                 <button class="iconos-acciones-box download" onclick="descargarGif('${content.data[i].images.downsized.url}', '${content.data[i].slug}')">
                     <img src="./assets/icon-download.svg" alt="icon-dowlnoad">
@@ -71,6 +69,27 @@ function mostrarFavoritos(content) {
     }
 }
 
+//FUNCION BORRAR FAV
+function borrarFav(gif){
+    let arrayAux = [];
+    arrayAux = JSON.parse(favoritosString);
+    let indice = arrayAux.indexOf(gif);
+    //console.log(arrayAux);
+    //console.log(indice);
+
+    arrayAux.splice(indice, 1);
+
+    let nuevoFavoritosString = JSON.stringify(arrayAux);
+    localStorage.setItem("gifosFavoritos", nuevoFavoritosString);
+    //console.log(favoritosString);
+
+    //cambio icono
+    let iconFavBorrar = document.getElementById('icon-borrar-fav-' + gif);
+    iconFavBorrar.setAttribute("src", "./assets/icon-fav-hover.svg");
+
+    //refresco pag
+    location.reload();
+}
 
 //FUNCION DESCARGAR GIF
 async function descargarGif(gifImg, gifNombre) {
@@ -92,7 +111,7 @@ function maxGifMobileFav(img, id, slug, user, title) {
             <p class="modal-titulo">${title}</p>
         </div>
         <div>
-            <button class="modal-btn"><img src="./assets/icon-fav-active.svg" alt="fav-gif" id="icon-fav-${id}"></button>
+            <button class="modal-btn" onclick="borrarFavMaxMob('${id}')"><img src="./assets/icon-fav-active.svg" alt="fav-gif" id="icon-borrar-fav-max-mobile-${id}"></button>
             <button class="modal-btn" onclick="descargarGif('${img}', '${slug}')"><img src="./assets/icon-download.svg" alt="download-gif"></button>
         </div>
     </div>
@@ -105,6 +124,12 @@ function maxGifMobileFav(img, id, slug, user, title) {
 function cerrarModalMobileFav() {
     modalMobileFav.style.display = "none";
 } 
+
+function borrarFavMaxMob(gif){
+    let iconNoFavMaxMob = document.getElementById('icon-borrar-fav-max-mobile-' + gif);
+    iconNoFavMaxMob.setAttribute("src", "./assets/icon-fav-hover.svg");
+    borrarFav(gif);
+}
 
 
 //MAXIMIZAR GIF DESKTOP
@@ -121,7 +146,7 @@ function maxGifDesktopFav(img, id, slug, user, title){
             <p class="modal-titulo">${title}</p>
         </div>
         <div>
-            <button class="modal-btn" onclick="agregarFavorito('${id}')"><img src="./assets/icon-fav-hover.svg" alt="fav-gif" id="icon-fav-${id}"></button>
+            <button class="modal-btn" onclick="borrarFavMax('${id}')"><img src="./assets/icon-fav-active.svg" alt="fav-gif" id="icon-borrar-fav-max-${id}"></button>
             <button class="modal-btn" onclick="descargarGif('${img}', '${slug}')"><img src="./assets/icon-download.svg" alt="download-gif"></button>
         </div>
     </div>
@@ -134,3 +159,9 @@ function maxGifDesktopFav(img, id, slug, user, title){
 function cerrarModalDesktopFav() {
     modalDesktopFav.style.display = "none";
 } 
+
+function borrarFavMax(gif){
+    let iconNoFavMax = document.getElementById('icon-borrar-fav-max-' + gif);
+    iconNoFavMax.setAttribute("src", "./assets/icon-fav-hover.svg");
+    borrarFav(gif);
+}

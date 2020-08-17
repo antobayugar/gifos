@@ -304,7 +304,7 @@ function maxGifMobile(img, id, slug, user, title) {
             <p class="modal-titulo">${title}</p>
         </div>
         <div>
-            <button class="modal-btn" onclick="agregarFavoritoMax('${id}')"><img src="./assets/icon-fav-hover.svg" alt="fav-gif" id="icon-fav-max-${id}"></button>
+            <button class="modal-btn" onclick="agregarFavoritoMaxMobile('${id}')"><img src="./assets/icon-fav-hover.svg" alt="fav-gif" id="icon-fav-max-mob-${id}"></button>
             <button class="modal-btn" onclick="descargarGif('${img}', '${slug}')"><img src="./assets/icon-download.svg" alt="download-gif"></button>
         </div>
     </div>
@@ -317,6 +317,14 @@ function maxGifMobile(img, id, slug, user, title) {
 function cerrarModalMobile() {
     modalMobile.style.display = "none";
 } 
+
+function agregarFavoritoMaxMobile(gif){
+
+    let iconFavMaxMobile = document.getElementById('icon-fav-max-mob-' + gif);
+    iconFavMaxMobile.setAttribute("src", "./assets/icon-fav-active.svg");
+
+    agregarFavorito(gif);
+}
 
 
 //MAXIMIZAR GIF DESKTOP
@@ -347,7 +355,6 @@ function cerrarModalDesktop() {
     modalDesktop.style.display = "none";
 } 
 
-//funcion fav max
 function agregarFavoritoMax(gif){
 
     let iconFavMax = document.getElementById('icon-fav-max-' + gif);
