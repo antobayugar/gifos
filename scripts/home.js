@@ -279,6 +279,7 @@ function agregarFavorito(gif) {
     //cambio el icono del corazon
     let iconFav = document.getElementById('icon-fav-' + gif);
     iconFav.setAttribute("src", "./assets/icon-fav-active.svg");
+    
 }
 
 
@@ -303,7 +304,7 @@ function maxGifMobile(img, id, slug, user, title) {
             <p class="modal-titulo">${title}</p>
         </div>
         <div>
-            <button class="modal-btn" onclick="agregarFavorito('${id}')"><img src="./assets/icon-fav-hover.svg" alt="fav-gif" id="icon-fav-${id}"></button>
+            <button class="modal-btn" onclick="agregarFavoritoMax('${id}')"><img src="./assets/icon-fav-hover.svg" alt="fav-gif" id="icon-fav-max-${id}"></button>
             <button class="modal-btn" onclick="descargarGif('${img}', '${slug}')"><img src="./assets/icon-download.svg" alt="download-gif"></button>
         </div>
     </div>
@@ -332,7 +333,7 @@ function maxGifDesktop(img, id, slug, user, title){
             <p class="modal-titulo">${title}</p>
         </div>
         <div>
-            <button class="modal-btn" onclick="agregarFavorito('${id}')"><img src="./assets/icon-fav-hover.svg" alt="fav-gif" id="icon-fav-${id}"></button>
+            <button class="modal-btn" onclick="agregarFavoritoMax('${id}')"><img src="./assets/icon-fav-hover.svg" alt="fav-gif" id="icon-fav-max-${id}"></button>
             <button class="modal-btn" onclick="descargarGif('${img}', '${slug}')"><img src="./assets/icon-download.svg" alt="download-gif"></button>
         </div>
     </div>
@@ -345,3 +346,12 @@ function maxGifDesktop(img, id, slug, user, title){
 function cerrarModalDesktop() {
     modalDesktop.style.display = "none";
 } 
+
+//funcion fav max
+function agregarFavoritoMax(gif){
+
+    let iconFavMax = document.getElementById('icon-fav-max-' + gif);
+    iconFavMax.setAttribute("src", "./assets/icon-fav-active.svg");
+
+    agregarFavorito(gif);
+}

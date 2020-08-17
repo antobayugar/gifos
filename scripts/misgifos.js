@@ -28,7 +28,7 @@ function buscarMisGifos() {
 
         fetch(urlMisGifos)
             .then(response => response.json())
-            
+
             .then(content => {
                 console.log(content);
                 mostrarMisGifos(content);
@@ -42,7 +42,7 @@ function buscarMisGifos() {
 function mostrarMisGifos(content) {
     let gifosMisGifosArray = content.data;
 
-    for(let i=0; i< gifosMisGifosArray.length; i++) {
+    for (let i = 0; i < gifosMisGifosArray.length; i++) {
         pantallaMisGifos.innerHTML += `
         <div class="resultados-gif-box-misgifos" onclick="maxGifMobileMG('${content.data[i].images.downsized.url}', '${content.data[i].id}', '${content.data[i].slug}', '${content.data[i].username}', '${content.data[i].title}')">
                     <div class="gif-acciones-resultados-misgifos">
@@ -70,7 +70,7 @@ function mostrarMisGifos(content) {
 
 //FUNCION DESCARGAR GIF
 async function descargarGif(gifImg, gifNombre) {
-    let blob = await fetch(gifImg).then( img => img.blob());;
+    let blob = await fetch(gifImg).then(img => img.blob());;
     invokeSaveAsDialog(blob, gifNombre + ".gif");
 }
 
@@ -100,11 +100,11 @@ function maxGifMobileMG(img, id, slug, user, title) {
 
 function cerrarModalMobileMG() {
     modalMobileMG.style.display = "none";
-} 
+}
 
 //FUNCION MAXIMIZAR DESKTOP
-function maxGifDesktopMG(img, id, slug, user, title){
-    if (window.matchMedia("(min-width: 1023px)").matches){
+function maxGifDesktopMG(img, id, slug, user, title) {
+    if (window.matchMedia("(min-width: 1023px)").matches) {
         modalDesktopMG.style.display = "block";
         modalDesktopMG.innerHTML = `
     <button class="modal-btn-close" onclick="cerrarModalDesktopMG()"><img src="./assets/button-close.svg" alt=""></button>
@@ -116,11 +116,12 @@ function maxGifDesktopMG(img, id, slug, user, title){
             <p class="modal-titulo">${title}</p>
         </div>
         <div>
+            <button class="modal-btn"><img src="./assets/icon_trash.svg" alt="delete-gif"></button>
             <button class="modal-btn" onclick="descargarGif('${img}', '${slug}')"><img src="./assets/icon-download.svg" alt="download-gif"></button>
         </div>
     </div>
     `;
-    modalDesktopMG.classList.add("modal-activado");
+        modalDesktopMG.classList.add("modal-activado");
         document.body.appendChild(modalDesktopMG);
     }
 }
