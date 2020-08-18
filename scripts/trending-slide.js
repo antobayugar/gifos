@@ -16,8 +16,6 @@ function trendingGifos() {
     .then(content => {
         //object with data, pagination, meta
         let trendingGifArray = content.data;
-        //console.log("Trending GIFOS", trendingGifArray);
-        //console.log("META Trending GIFOS", content.meta);
 
         let trendingGIFOhtml = "";
 
@@ -54,3 +52,28 @@ function trendingGifos() {
         console.log(err);
     })
 } 
+
+
+//funciones para slide desktop
+let trendingButtons = document.querySelectorAll('.slider-button');
+let numberOfImg = document.getElementsByClassName('gif-contenedor');
+
+let imageIndex = 1;
+let translateX = 0;
+
+let trendingBtnPrev = document.getElementById('trending-btn-previous');
+let trendingBtnNext = document.getElementById('trending-btn-next');
+
+trendingBtnNext.addEventListener('click', sliderNext);
+function sliderNext() {
+    imageIndex++;
+    translateX -= 387;
+    sliderTrendingGifos.style.transform = `translateX(${translateX}px)`;
+}
+
+trendingBtnPrev.addEventListener('click', sliderPrev);
+function sliderPrev() {
+    imageIndex--;
+    translateX += 387;
+    sliderTrendingGifos.style.transform = `translateX(${translateX}px)`;
+}
