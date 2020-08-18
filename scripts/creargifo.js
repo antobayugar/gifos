@@ -162,7 +162,7 @@ function subirGifo() {
 
     fetch(`https://upload.giphy.com/v1/gifs`, {
         method: 'POST',
-        body: form
+        body: form,
     })
 
         .then(response => {

@@ -265,18 +265,12 @@
     line-height: 28px;
 }
 
-
-
-
-
-
-
-
-
 @media screen and (min-width: 1024px) {
     .main-header {
         h1 {
-            padding-top: 76px;
+            font-size: 30px;
+            line-height: 35px;
+            padding: 76px 250px 24px 250px;
         }
     }
 
@@ -288,14 +282,14 @@
         flex-direction: row;
         justify-content: center;
     }
-    
+
     .resultados-gif-box {
         //la caja con cada gif
         width: 220px;
         height: 200px;
         margin: 0 10px 25px 10px;
     }
-    
+
     .gif-acciones-resultados {
         position: absolute;
         z-index: 0;
@@ -340,7 +334,6 @@
         background-color: $blanco;
     }
 
-    
     .textos-descripcion-gif-resultados {
         position: absolute;
         bottom: 30px;

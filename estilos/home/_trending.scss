@@ -17,6 +17,14 @@
     }
 }
 
+.slider-prev {
+    display: none;
+}
+
+.slider-next {
+    display: none;
+}
+
 .trending-slider {
     //contenedor slider
     display: flex;
@@ -50,17 +58,91 @@
 }
 
 @media screen and (min-width: 1024px) {
-    .trending-slider {
-        margin: 53px auto 0px auto;
+    .trending-slider-contenedor {
         display: flex;
-        max-width: 2500px;
-        width: 80%;
+        justify-content: space-between;
+        align-items: center;
+        margin: 53px 50px 0 50px;
+    }
+    .slider-prev {
+        display: block;
+        border: 1px solid $violeta;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .prev-blanco {
+            display: none;
+            width: 8px;
+        }
+    }
+
+    .slider-prev:hover {
+        background-color: $violeta;
+
+        .prev-violeta {
+            display: none;
+        }
+
+        .prev-blanco {
+            display: block;
+        }
+    }
+
+    .slider-next {
+        display: block;
+        border: 1px solid $violeta;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .next-blanco {
+            display: none;
+            width: 8px;
+        }
+    }
+
+    .slider-next:hover {
+        background-color: $violeta;
+
+        .next-violeta {
+            display: none;
+        }
+
+        .next-blanco {
+            display: block;
+        }
+    }
+
+    .trending-slider {
+        overflow-x: hidden;
+        margin: 0;
+        width: 800px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+
+    .gif-contenedor {
+        //cajita del gif
+        margin: 0 15px;
+    }
+
+    .gif-contenedor:first-child{
+        margin-left: 0;
     }
 }
 
 @media screen and (min-width: 1440px) {
     //estilos seccion fija de trendig gifs
     .trending {
+        padding: 0;
+
         h2 {
             padding-top: 78px;
             font-size: 30px;
@@ -70,26 +152,28 @@
             font-size: 18px;
             padding: 14px 0 0 0;
         }
+    }
 
-        .trending-slider {
-            margin-top: 53px;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            justify-content: center;
-            width: 1200px;
-            height: 275px;
-            padding-bottom: 169px;
-        }
+    .trending-slider-contenedor {
+        margin: 53px 94px 0 94px;
+        padding-bottom: 182px;
+    }
 
-        .gif-contenedor {
-            //position: relative;
-            width: 357px;
-            height: 275px;
-            //margin: 0 15px;
-        }
+    .trending-slider {
+        margin: 0;
+        padding: 0;
+        width: 1129px;
+        max-width: 1129px;
+        height: 275px;
+    }
 
-        /* .gif-acciones {
+    .gif-contenedor {
+        //position: relative;
+        width: 357px;
+        height: 275px;
+    }
+
+    /* .gif-acciones {
             position: absolute;
             z-index: 0;
             background-color: $violeta-op2;
@@ -165,9 +249,8 @@
             display: block;
         } */
 
-        .trending-gif {
-            //esta clase va separada para poder aplicarla a los gif que traiga desde la api
-            width: 357px;
-        }
+    .trending-gif {
+        //esta clase va separada para poder aplicarla a los gif que traiga desde la api
+        width: 357px;
     }
 }

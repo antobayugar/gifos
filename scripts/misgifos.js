@@ -47,11 +47,11 @@ function mostrarMisGifos(content) {
         <div class="resultados-gif-box-misgifos" onclick="maxGifMobileMG('${content.data[i].images.downsized.url}', '${content.data[i].id}', '${content.data[i].slug}', '${content.data[i].username}', '${content.data[i].title}')">
                     <div class="gif-acciones-resultados-misgifos">
                         <div class="iconos-acciones-gif">
-                            <button class="iconos-acciones-box borrar">
+                            <button class="iconos-acciones-box borrar" onclick="borrarGifo('${content.data[i].id}')">
                                 <img src="./assets/icon_trash.svg" alt="icon-borrar">
                             </button>
-                            <button class="iconos-acciones-box download">
-                                <img src="./assets/icon-download.svg" alt="icon-download" onclick="descargarGif('${content.data[i].images.downsized.url}', '${content.data[i].slug}')">
+                            <button class="iconos-acciones-box download" onclick="descargarGif('${content.data[i].images.downsized.url}', '${content.data[i].slug}')">
+                                <img src="./assets/icon-download.svg" alt="icon-download" >
                             </button>
                             <button class="iconos-acciones-box max" onclick="maxGifDesktopMG('${content.data[i].images.downsized.url}', '${content.data[i].id}', '${content.data[i].slug}', '${content.data[i].username}', '${content.data[i].title}')">
                                 <img src="./assets/icon-max.svg" alt="icon-max">
@@ -67,6 +67,25 @@ function mostrarMisGifos(content) {
         `;
     }
 }
+
+//FUNCION BORRAR GIF
+function borrarGifo(gif){
+    let arrayAuxGifos = [];
+    arrayAuxGifos = JSON.parse(misGifosString);
+    let indiceGif = arrayAuxGifos.indexOf(gif);
+
+    console.log(arrayAuxGifos);
+    console.log(indiceGif);
+
+    arrayAuxGifos.splice(indiceGif,1);
+
+    let nuevoMisGifosString = JSON.stringify(arrayAuxGifos);
+    localStorage.setItem("misGifos", nuevoMisGifosString);
+
+    location.reload();
+}
+
+
 
 //FUNCION DESCARGAR GIF
 async function descargarGif(gifImg, gifNombre) {
@@ -88,7 +107,7 @@ function maxGifMobileMG(img, id, slug, user, title) {
             <p class="modal-titulo">${title}</p>
         </div>
         <div>
-            <button class="modal-btn"><img src="./assets/icon_trash.svg" alt="delete-gif"></button>
+            <button class="modal-btn" onclick="borrarGifo('${id}')"><img src="./assets/icon_trash.svg" alt="delete-gif"></button>
             <button class="modal-btn" onclick="descargarGif('${img}', '${slug}')"><img src="./assets/icon-download.svg" alt="download-gif"></button>
         </div>
     </div>
@@ -116,7 +135,7 @@ function maxGifDesktopMG(img, id, slug, user, title) {
             <p class="modal-titulo">${title}</p>
         </div>
         <div>
-            <button class="modal-btn"><img src="./assets/icon_trash.svg" alt="delete-gif"></button>
+            <button class="modal-btn" onclick="borrarGifo('${id}')"><img src="./assets/icon_trash.svg" alt="delete-gif"></button>
             <button class="modal-btn" onclick="descargarGif('${img}', '${slug}')"><img src="./assets/icon-download.svg" alt="download-gif"></button>
         </div>
     </div>

@@ -813,7 +813,9 @@ footer .datos .footer-copyright p {
 
 @media screen and (min-width: 1024px) {
   .main-header h1 {
-    padding-top: 76px;
+    font-size: 30px;
+    line-height: 35px;
+    padding: 76px 250px 24px 250px;
   }
   .resultados-busqueda {
     margin: 38px 10px 53px 10px;
@@ -1009,6 +1011,14 @@ footer .datos .footer-copyright p {
   padding: 9px 100px;
 }
 
+.slider-prev {
+  display: none;
+}
+
+.slider-next {
+  display: none;
+}
+
 .trending-slider {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1042,19 +1052,127 @@ footer .datos .footer-copyright p {
 }
 
 @media screen and (min-width: 1024px) {
-  .trending-slider {
-    margin: 53px auto 0px auto;
+  .trending-slider-contenedor {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    max-width: 2500px;
-    width: 80%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 53px 50px 0 50px;
+  }
+  .slider-prev {
+    display: block;
+    border: 1px solid #572EE5;
+    width: 40px;
+    height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .slider-prev .prev-blanco {
+    display: none;
+    width: 8px;
+  }
+  .slider-prev:hover {
+    background-color: #572EE5;
+  }
+  .slider-prev:hover .prev-violeta {
+    display: none;
+  }
+  .slider-prev:hover .prev-blanco {
+    display: block;
+  }
+  .slider-next {
+    display: block;
+    border: 1px solid #572EE5;
+    width: 40px;
+    height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .slider-next .next-blanco {
+    display: none;
+    width: 8px;
+  }
+  .slider-next:hover {
+    background-color: #572EE5;
+  }
+  .slider-next:hover .next-violeta {
+    display: none;
+  }
+  .slider-next:hover .next-blanco {
+    display: block;
+  }
+  .trending-slider {
+    overflow-x: hidden;
+    margin: 0;
+    width: 800px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .gif-contenedor {
+    margin: 0 15px;
+  }
+  .gif-contenedor:first-child {
+    margin-left: 0;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .trending {
-    /* .gif-acciones {
+    padding: 0;
+  }
+  .trending h2 {
+    padding-top: 78px;
+    font-size: 30px;
+  }
+  .trending p {
+    font-size: 18px;
+    padding: 14px 0 0 0;
+  }
+  .trending-slider-contenedor {
+    margin: 53px 94px 0 94px;
+    padding-bottom: 182px;
+  }
+  .trending-slider {
+    margin: 0;
+    padding: 0;
+    width: 1129px;
+    max-width: 1129px;
+    height: 275px;
+  }
+  .gif-contenedor {
+    width: 357px;
+    height: 275px;
+  }
+  /* .gif-acciones {
             position: absolute;
             z-index: 0;
             background-color: $violeta-op2;
@@ -1129,38 +1247,7 @@ footer .datos .footer-copyright p {
         .gif-contenedor:hover .gif-acciones {
             display: block;
         } */
-  }
-  .trending h2 {
-    padding-top: 78px;
-    font-size: 30px;
-  }
-  .trending p {
-    font-size: 18px;
-    padding: 14px 0 0 0;
-  }
-  .trending .trending-slider {
-    margin-top: 53px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    width: 1200px;
-    height: 275px;
-    padding-bottom: 169px;
-  }
-  .trending .gif-contenedor {
-    width: 357px;
-    height: 275px;
-  }
-  .trending .trending-gif {
+  .trending-gif {
     width: 357px;
   }
 }
