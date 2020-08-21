@@ -16,7 +16,7 @@ PASOS
 6: gifo subido con exito: cambia icono y texto del overlay, aparecen los botones para descargar o link
 
 - repetir captura: funcion grabar
-
+ 
 */
 
 apiKey = "QEiNwRIV3GcWQ83yvX6IVcIAST0hxr1n";
@@ -34,6 +34,7 @@ let overlayCargando = document.getElementById('overlay-video');
 let iconoCargando = document.getElementById('overlay-video-icon');
 let textoCargando = document.getElementById('overlay-video-parrafo');
 let accionesCargando = document.getElementById('overlay-video-actions');
+let overlayActions = document.getElementById('overlay-video-actions');
 
 let recorder;
 let blob;
@@ -171,12 +172,21 @@ function subirGifo() {
 
         //6: gifo subido con exito: cambia icono y texto del overlay, aparecen los botones para descargar o link
         .then(objeto => {
+            console.log(objeto);
+            let miGifId = objeto.data.id;
+
             //muestro elementos del DOM subiendo gifo
             accionesCargando.style.display = "block";
             iconoCargando.setAttribute("src", "./assets/check.svg");
             textoCargando.innerText = "GIFO subido con éxito";
-
-            let miGifId = objeto.data.id;
+            overlayActions.innerHTML = `
+                <button class="overlay-video-button" id="btn-creargifo-descargar" onclick="descargarGifCreado('${miGifId}')">
+                <img src="./assets/icon-download.svg" alt="download">
+                </button>
+                <button class="overlay-video-button" id="btn-creargifo-link">
+                <img src="./assets/icon-link.svg" alt="link">
+                </button>
+                `;
 
             //si en el local storage no hay nada, el array queda vacio
             if (misGifosString == null) {
@@ -193,15 +203,15 @@ function subirGifo() {
             localStorage.setItem("misGifos", misGifosString);
         })
 
-        .catch (error => console.log("error al subir gif a GIPHY" + error))
+        .catch(error => console.log("error al subir gif a GIPHY" + error))
 }
 
-/* //FUNCION DESCARGAR GIF
-async function descargarGif(gifImg, gifNombre) {
+//FUNCION DESCARGAR GIF
+async function descargarGifCreado(gifImg) {
     let blob = await fetch(gifImg).then( img => img.blob());;
-    invokeSaveAsDialog(blob, gifNombre + ".gif");
+    invokeSaveAsDialog(blob, "migifo.gif");
 }
- */
+
 //- repetir captura: funcion grabar
 repetirCaptura.addEventListener('click', repetirGifo);
 
