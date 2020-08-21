@@ -64,19 +64,35 @@ let trendingBtnNext = document.getElementById('trending-btn-next');
 
 trendingBtnNext.addEventListener('click', sliderNext);
 function sliderNext() {
-    if (imageIndex <= 5) {
-        imageIndex++;
-        translateX -= 387;
-        sliderTrendingGifos.style.transform = `translateX(${translateX}px)`;
+    if (window.matchMedia("(min-width: 1440px)").matches) {
+        if (imageIndex <= 5) {
+            imageIndex++;
+            translateX -= 387;
+            sliderTrendingGifos.style.transform = `translateX(${translateX}px)`;
+        }
+    } else if (window.matchMedia("(min-width: 1024px)").matches) {
+        if (imageIndex <= 5) {
+            imageIndex++;
+            translateX -= 273;
+            sliderTrendingGifos.style.transform = `translateX(${translateX}px)`;
+        }
     }
 }
 
 trendingBtnPrev.addEventListener('click', sliderPrev);
 function sliderPrev() {
-    if (imageIndex !== 1) {
-        imageIndex--;
-        translateX += 387;
-        sliderTrendingGifos.style.transform = `translateX(${translateX}px)`;
+    if (window.matchMedia("(min-width: 1440px)").matches) {
+        if (imageIndex !== 1) {
+            imageIndex--;
+            translateX += 387;
+            sliderTrendingGifos.style.transform = `translateX(${translateX}px)`;
+        }
+    } else if (window.matchMedia("(min-width: 1024px)").matches) {
+        if (imageIndex !== 1) {
+            imageIndex--;
+            translateX += 273;
+            sliderTrendingGifos.style.transform = `translateX(${translateX}px)`;
+        }
     }
 }
 

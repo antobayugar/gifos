@@ -1051,109 +1051,9 @@ footer .datos .footer-copyright p {
      object-fit: cover;
 }
 
-/* @media screen and (min-width: 1024px) {
-
-    .trending-slider-contenedor {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 53px 50px 0 50px;
-    }
-
-    .slider-prev {
-        display: block;
-        border: 1px solid $violeta;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .prev-blanco {
-            display: none;
-            width: 8px;
-        }
-    }
-
-    .slider-prev:hover {
-        background-color: $violeta;
-
-        .prev-violeta {
-            display: none;
-        }
-
-        .prev-blanco {
-            display: block;
-        }
-    }
-
-    .slider-next {
-        display: block;
-        border: 1px solid $violeta;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .next-blanco {
-            display: none;
-            width: 8px;
-        }
-    }
-
-    .slider-next:hover {
-        background-color: $violeta;
-
-        .next-violeta {
-            display: none;
-        }
-
-        .next-blanco {
-            display: block;
-        }
-    }
-
-    .trending-slider-box{
-        overflow-x: hidden;
-        transform: translateX(0);
-        width: 800px;
-    }
-
-    .trending-slider {
-        //overflow-x: hidden;
-        margin: 0;
-        max-width: 2800px;
-        width: 2800px;
-        display: flex;
-        justify-content: flex-start;
-        //transform: translateX(0);
-    }
-
-    .gif-contenedor {
-        //cajita del gif
-        margin: 0 15px;
-    }
-
-    .gif-contenedor:first-child{
-        margin-left: 0;
-    }
-} */
-@media screen and (min-width: 1440px) {
-  .trending {
-    padding: 0;
-  }
-  .trending h2 {
-    padding-top: 78px;
-    font-size: 30px;
-  }
-  .trending .trending-text {
-    font-size: 18px;
-    padding: 14px 0 0 0;
-  }
+@media screen and (min-width: 1024px) {
   .trending-slider-contenedor {
-    margin: 53px 94px 0 94px;
-    padding-bottom: 182px;
+    margin: 53px 50px 0 50px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1222,7 +1122,7 @@ footer .datos .footer-copyright p {
   }
   .trending-slider-box {
     overflow-x: hidden;
-    width: 1129px;
+    width: 795px;
   }
   .trending-slider {
     overflow-x: hidden;
@@ -1232,7 +1132,6 @@ footer .datos .footer-copyright p {
     padding: 0;
     width: 3080px;
     max-width: 3080px;
-    height: 275px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1242,8 +1141,8 @@ footer .datos .footer-copyright p {
   }
   .gif-contenedor {
     margin: 0 15px;
-    width: 357px;
-    height: 275px;
+    width: 243px;
+    height: 187px;
   }
   .gif-contenedor:first-child {
     margin-left: 0;
@@ -1252,8 +1151,8 @@ footer .datos .footer-copyright p {
     position: absolute;
     z-index: 0;
     background-color: rgba(87, 46, 229, 0.6);
-    width: 357px;
-    height: 275px;
+    width: 243px;
+    height: 187px;
   }
   .iconos-acciones-gif {
     display: -webkit-box;
@@ -1295,8 +1194,8 @@ footer .datos .footer-copyright p {
   .textos-descripcion-gif {
     text-align: left;
     position: absolute;
-    bottom: 51px;
-    left: 18.5px;
+    bottom: 20px;
+    left: 10px;
   }
   .user-gif {
     font-family: 'Roboto', sans-serif;
@@ -1328,6 +1227,42 @@ footer .datos .footer-copyright p {
   }
   .gif-contenedor:hover .gif-acciones {
     display: block;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .trending {
+    padding: 0;
+  }
+  .trending h2 {
+    padding-top: 78px;
+    font-size: 30px;
+  }
+  .trending .trending-text {
+    font-size: 18px;
+    padding: 14px 0 0 0;
+  }
+  .trending-slider-contenedor {
+    margin: 53px 94px 0 94px;
+    padding-bottom: 182px;
+  }
+  .trending-slider-box {
+    width: 1133px;
+  }
+  .trending-slider {
+    height: 275px;
+  }
+  .gif-contenedor {
+    width: 357px;
+    height: 275px;
+  }
+  .gif-acciones {
+    width: 357px;
+    height: 275px;
+  }
+  .textos-descripcion-gif {
+    bottom: 51px;
+    left: 18.5px;
   }
   .trending-gif {
     width: 357px;
