@@ -16,13 +16,13 @@ let darkModeActivado = () => {
     cambioIconoCrearGifo();
 
     //home
-    if (url === "/index.html") {
+    if (url === "/index.html" || url === "/gifos/index.html") {
         //funcion cambiar icono lupa violeta
         cambioIconosBusqueda();
     }
 
     //crear gifos
-    if (url === "/creargifo.html") {
+    if (url === "/creargifo.html" || url === "/gifos/creargifo.html") {
         //funcion cambiar imagenes camaras
         cambioCamaras();
     }
@@ -40,13 +40,13 @@ let darkModeDesactivado = () => {
     cambioIconoCrearGifo();
 
     //home
-    if (url === "/index.html") {
+    if (url === "/index.html" || url === "/gifos/index.html") {
         //funcion cambiar icono lupa violeta
         cambioIconosBusqueda();
     }
 
     //crear gifos
-    if (url === "/creargifo.html") {
+    if (url === "/creargifo.html" || url === "/gifos/creargifo.html") {
         //funcion cambiar imagenes camaras
         cambioCamaras();
     }

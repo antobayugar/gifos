@@ -10,7 +10,8 @@ let modalMobileFav = document.createElement("div");
 let modalDesktopFav = document.createElement("div");
 
 let urlActual = window.location.pathname;
-if (urlActual ==="/favoritos.html") {
+
+if (urlActual ==="/gifos/favoritos.html" || urlActual==="/favoritos.html") {
     //solo corre la funcion si estoy en la pagina de favoritos
     buscarFavoritos();
 }
