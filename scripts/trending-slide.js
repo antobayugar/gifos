@@ -97,7 +97,8 @@ function sliderPrev() {
 }
 
 
-//funciones tarjetas
+//ACCIONES TARJETAS
+//MODAL MAX
 modalMobile = document.createElement("div");
 modalDesktop = document.createElement("div");
 
@@ -133,7 +134,7 @@ function agregarFavoritoMaxMobileTrending(gif) {
     let iconFavMaxMobile = document.getElementById('icon-fav-max-mob-trending-' + gif);
     iconFavMaxMobile.setAttribute("src", "./assets/icon-fav-active.svg");
 
-    agregarFavorito(gif);
+    agregarFavoritoTrendingGral(gif);
 }
 
 function maxGifDesktopTrending(img, id, slug, user, title) {
@@ -164,18 +165,25 @@ function cerrarModalDesktop() {
 }
 
 function agregarFavoritoMax(gif) {
-
     let iconFavMax = document.getElementById('icon-fav-max-' + gif);
     iconFavMax.setAttribute("src", "./assets/icon-fav-active.svg");
-
-    agregarFavorito(gif);
+    agregarFavoritoTrendingGral(gif);
 }
 
+// FAVORITOS
 favoritosArray = [];
 favoritosString = localStorage.getItem("gifosFavoritos");
 
 function agregarFavoritoTrending(gif) {
+    //cambio el icono del corazon
+    let iconFav = document.getElementById('icon-fav-trending-' + gif);
+    iconFav.setAttribute("src", "./assets/icon-fav-active.svg");
 
+    agregarFavoritoTrendingGral(gif);
+
+}
+
+function agregarFavoritoTrendingGral(gif) {
     //si en el local storage no hay nada, el array queda vacio
     if (favoritosString == null) {
         favoritosArray = [];
@@ -189,13 +197,10 @@ function agregarFavoritoTrending(gif) {
     //vuelvo a pasar a texto el array para subirlo al localStorage
     favoritosString = JSON.stringify(favoritosArray);
     localStorage.setItem("gifosFavoritos", favoritosString);
-
-    //cambio el icono del corazon
-    let iconFav = document.getElementById('icon-fav-trending-' + gif);
-    iconFav.setAttribute("src", "./assets/icon-fav-active.svg");
-
 }
 
+
+//DESCARGAR
 async function descargarGifTrending(gifImg, gifNombre) {
     let blob = await fetch(gifImg).then(img => img.blob());
     invokeSaveAsDialog(blob, gifNombre + ".gif");
