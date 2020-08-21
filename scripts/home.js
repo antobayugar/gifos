@@ -150,7 +150,7 @@ function traerBusqueda(content) {
                 <div class="resultados-gif-box" onclick="maxGifMobile('${content.images.downsized.url}', '${content.id}', '${content.slug}', '${content.username}', '${content.title}')">
                 <div class="gif-acciones-resultados">
                     <div class="iconos-acciones-gif">
-                        <button class="iconos-acciones-box favorito" onclick="agregarFavorito('${content.id}')">
+                        <button class="iconos-acciones-box favorito" onclick="agregarFavoritoBusqueda('${content.id}')">
                             <img src="./assets/icon-fav-hover.svg" alt="icon-favorito" id="icon-fav-${content.id}">
                         </button>
                         <button class="iconos-acciones-box download" onclick="descargarGif('${content.images.downsized.url}', '${content.slug}')">
@@ -260,6 +260,13 @@ function trendingTopics() {
 //FUNCIONES ACCIONES GIF:
 
 //FAVORITOS
+function agregarFavoritoBusqueda(gif){
+    let iconFav = document.getElementById('icon-fav-' + gif);
+    iconFav.setAttribute("src", "./assets/icon-fav-active.svg");
+
+    agregarFavorito(gif);
+}
+
 function agregarFavorito(gif) {
 
     //si en el local storage no hay nada, el array queda vacio
@@ -275,11 +282,6 @@ function agregarFavorito(gif) {
     //vuelvo a pasar a texto el array para subirlo al localStorage
     favoritosString = JSON.stringify(favoritosArray);
     localStorage.setItem("gifosFavoritos", favoritosString);
-
-    //cambio el icono del corazon
-    let iconFav = document.getElementById('icon-fav-' + gif);
-    iconFav.setAttribute("src", "./assets/icon-fav-active.svg");
-    
 }
 
 

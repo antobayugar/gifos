@@ -11,7 +11,7 @@
         line-height: 30px;
     }
 
-    p {
+    .trending-text {
         @include textos-mobile;
         padding: 9px 100px;
     }
@@ -156,7 +156,7 @@
             font-size: 30px;
         }
 
-        p {
+        .trending-text {
             font-size: 18px;
             padding: 14px 0 0 0;
         }
@@ -253,7 +253,7 @@
         margin-left: 0;
     }
 
-    /* .gif-acciones {
+    .gif-acciones {
             position: absolute;
             z-index: 0;
             background-color: $violeta-op2;
@@ -298,6 +298,7 @@
         }
 
         .textos-descripcion-gif {
+            text-align: left;
             position: absolute;
             bottom: 51px;
             left: 18.5px;
@@ -310,7 +311,7 @@
             font-size: 15px;
             line-height: 18px;
             font-weight: 300;
-            padding: 0;
+            padding: 0 10px 0 0;
             margin-bottom: 6px;
         }
 
@@ -321,13 +322,13 @@
             font-size: 16px;
             line-height: 19px;
             font-weight: 500;
-            padding: 0;
+            padding: 0 10px 0 0;
             margin: 0;
         }
 
         .gif-contenedor:hover .gif-acciones {
             display: block;
-        } */
+        } 
 
     .trending-gif {
         //esta clase va separada para poder aplicarla a los gif que traiga desde la api

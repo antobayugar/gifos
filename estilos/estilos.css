@@ -1002,7 +1002,7 @@ footer .datos .footer-copyright p {
   line-height: 30px;
 }
 
-.trending p {
+.trending .trending-text {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 16px;
@@ -1147,7 +1147,7 @@ footer .datos .footer-copyright p {
     padding-top: 78px;
     font-size: 30px;
   }
-  .trending p {
+  .trending .trending-text {
     font-size: 18px;
     padding: 14px 0 0 0;
   }
@@ -1248,81 +1248,87 @@ footer .datos .footer-copyright p {
   .gif-contenedor:first-child {
     margin-left: 0;
   }
-  /* .gif-acciones {
-            position: absolute;
-            z-index: 0;
-            background-color: $violeta-op2;
-            width: 357px;
-            height: 275px;
-        }
-
-        .iconos-acciones-gif {
-            display: flex;
-            position: absolute;
-            right: 10px;
-            top: 10px;
-        }
-
-        .iconos-acciones-box {
-            width: 32px;
-            height: 32px;
-            background-color: $blanco-op;
-            display: flex;
+  .gif-acciones {
+    position: absolute;
+    z-index: 0;
+    background-color: rgba(87, 46, 229, 0.6);
+    width: 357px;
+    height: 275px;
+  }
+  .iconos-acciones-gif {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  .iconos-acciones-box {
+    width: 32px;
+    height: 32px;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
             justify-content: center;
-            align-content: center;
-            border-radius: 6px;
-            border: none;
-        }
-
-        .favorito {
-            cursor: pointer;
-        }
-
-        .download {
-            margin-left: 10px;
-            cursor: pointer;
-        }
-
-        .max {
-            margin-left: 10px;
-            cursor: pointer;
-        }
-
-        .iconos-acciones-box:hover {
-            background-color: $blanco;
-        }
-
-        .textos-descripcion-gif {
-            position: absolute;
-            bottom: 51px;
-            left: 18.5px;
-        }
-
-        .user-gif {
-            @include textos-mobile;
-            text-align: left;
-            color: $blanco;
-            font-size: 15px;
-            line-height: 18px;
-            font-weight: 300;
-            padding: 0;
-            margin-bottom: 6px;
-        }
-
-        .titulo-gif {
-            @include textos-mobile;
-            text-align: left;
-            color: $blanco;
-            font-size: 16px;
-            line-height: 19px;
-            font-weight: 500;
-            padding: 0;
-            margin: 0;
-        }
-
-        .gif-contenedor:hover .gif-acciones {
-            display: block;
-        } */
+    -ms-flex-line-pack: center;
+        align-content: center;
+    border-radius: 6px;
+    border: none;
+  }
+  .favorito {
+    cursor: pointer;
+  }
+  .download {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .max {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .iconos-acciones-box:hover {
+    background-color: #ffffff;
+  }
+  .textos-descripcion-gif {
+    text-align: left;
+    position: absolute;
+    bottom: 51px;
+    left: 18.5px;
+  }
+  .user-gif {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 23px;
+    text-align: center;
+    text-align: left;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 300;
+    padding: 0 10px 0 0;
+    margin-bottom: 6px;
+  }
+  .titulo-gif {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 23px;
+    text-align: center;
+    text-align: left;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 500;
+    padding: 0 10px 0 0;
+    margin: 0;
+  }
+  .gif-contenedor:hover .gif-acciones {
+    display: block;
+  }
   .trending-gif {
     width: 357px;
   }
@@ -2379,6 +2385,18 @@ footer .datos .footer-copyright p {
 
 .body-dark .main-creargifo .ilus-grabar-contenedor .div-grabacion div .contador-contenedor #contador-repetircaptura:hover {
   border-bottom: 2px solid #50E3C2;
+}
+
+.body-dark .modal-activado {
+  background-color: #37383cea;
+}
+
+.body-dark .modal-activado .modal-bar .modal-textos .modal-user {
+  color: #ffffff;
+}
+
+.body-dark .modal-activado .modal-bar .modal-textos .modal-titulo {
+  color: #ffffff;
 }
 
 * {
