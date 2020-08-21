@@ -27,7 +27,7 @@ function buscarFavoritos() {
 
     } else {
         favoritosArray = JSON.parse(favoritosString);
-        console.log(favoritosArray);
+        //console.log(favoritosArray);
         let urlFavoritos = `https://api.giphy.com/v1/gifs?ids=${favoritosArray.toString()}&api_key=${apiKey}`;
 
         fetch(urlFavoritos)
