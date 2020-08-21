@@ -16,11 +16,11 @@ buscarMisGifos();
 function buscarMisGifos() {
     let pantallaMisGifosVacio = document.getElementById('misgifos-vacio');
 
-    if (misGifosString == null) {
+    if (misGifosString == null || misGifosString == "[]") {
         //1. si no tengo gif creados, muestro la pantalla mis gifos vacia
         pantallaMisGifosVacio.style.display = "block";
         pantallaMisGifos.style.display = "none";
-
+ 
     } else {
         misGifosArray = JSON.parse(misGifosString);
         let urlMisGifos = `https://api.giphy.com/v1/gifs?ids=${misGifosArray.toString()}&api_key=${apiKey}`;
