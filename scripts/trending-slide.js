@@ -197,6 +197,7 @@ function agregarFavoritoTrendingGral(gif) {
     //vuelvo a pasar a texto el array para subirlo al localStorage
     favoritosString = JSON.stringify(favoritosArray);
     localStorage.setItem("gifosFavoritos", favoritosString);
+   
 }
 
 

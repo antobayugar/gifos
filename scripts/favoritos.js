@@ -11,10 +11,12 @@ let modalDesktopFav = document.createElement("div");
 
 let urlActual = window.location.pathname;
 
-if (urlActual ==="/gifos/favoritos.html" || urlActual==="/favoritos.html") {
+/* if (urlActual ==="/gifos/favoritos.html" || urlActual==="/favoritos.html") {
     //solo corre la funcion si estoy en la pagina de favoritos
     buscarFavoritos();
-}
+} */
+
+buscarFavoritos();
 
 //funciones para mostrar los favoritos en la pagina
 function buscarFavoritos() {
